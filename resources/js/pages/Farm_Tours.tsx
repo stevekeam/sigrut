@@ -38,8 +38,8 @@ export default function Tours() {
             id: 1,
             name: 'Basic Farm Tour',
             duration: '1.5 Hours',
-            price: 1000,
-            image: 'https://images.unsplash.com/photo-1500937386664-56d1dfef3854?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            price: 500,
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250110-WA0008.jpg',
             highlights: [
                 'Guided farm walk',
                 'Meet farm animals',
@@ -55,8 +55,8 @@ export default function Tours() {
             id: 2,
             name: 'Beekeeping Experience',
             duration: '3 Hours',
-            price: 2500,
-            image: 'https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            price: 1500,
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0048.jpg',
             highlights: [
                 'Beekeeping suit provided',
                 'Live hive demonstration',
@@ -72,8 +72,8 @@ export default function Tours() {
             id: 3,
             name: 'Avocado Farm Tour',
             duration: '2 Hours',
-            price: 1500,
-            image: 'https://images.unsplash.com/photo-1621303837174-89787a7d4729?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            price: 1000,
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-14.32.34_a77dfc73.jpg',
             highlights: [
                 'Avocado orchard walk',
                 'Harvesting demonstration',
@@ -89,8 +89,8 @@ export default function Tours() {
             id: 4,
             name: 'Full Day Farm Experience',
             duration: '6 Hours',
-            price: 5000,
-            image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            price: 2000,
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-15.48.48_05cb5bfc-e1738737532316.jpg',
             highlights: [
                 'All farm activities',
                 'Farm-to-table lunch',
@@ -107,8 +107,8 @@ export default function Tours() {
             id: 5,
             name: 'Beekeeping Training Workshop',
             duration: '2 Days',
-            price: 8000,
-            image: 'https://images.unsplash.com/photo-1559056199-641a0ac8b55e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            price: 2000,
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0050-e1737969730374.jpg',
             highlights: [
                 'Comprehensive beekeeping theory',
                 'Practical hive management',
@@ -124,8 +124,8 @@ export default function Tours() {
             id: 6,
             name: 'Organic Farming Certification',
             duration: '3 Days',
-            price: 12000,
-            image: 'https://images.unsplash.com/photo-1574943320219-553eb213f72d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            price: 2000,
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/Sl1.png',
             highlights: [
                 'Organic farming principles',
                 'Soil management techniques',
@@ -145,9 +145,9 @@ export default function Tours() {
             id: 1,
             name: 'Executive Conference Hall',
             capacity: '50-100 People',
-            price: 15000,
+            price: 5000,
             duration: 'Full Day',
-            image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-14.33.54_27c096d6.jpg',
             features: [
                 'Air-conditioned space',
                 'Natural lighting',
@@ -170,7 +170,7 @@ export default function Tours() {
             capacity: '30-60 People',
             price: 10000,
             duration: 'Full Day',
-            image: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0103.jpg',
             features: [
                 'Classroom-style setup',
                 'Practical demonstration area',
@@ -193,7 +193,7 @@ export default function Tours() {
             capacity: '100-200 People',
             price: 20000,
             duration: 'Full Day',
-            image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0108-e1738327438365.jpg',
             features: [
                 'Open-air setting',
                 'Natural surroundings',
@@ -240,19 +240,19 @@ export default function Tours() {
             title: 'Sustainable Agriculture',
             duration: '2 Days',
             topics: ['Organic farming', 'Water conservation', 'Crop rotation'],
-            price: 'KSh 8,000'
+            price: 'KSh 2,000'
         },
         {
             title: 'Agribusiness Management',
             duration: '3 Days',
             topics: ['Market analysis', 'Financial planning', 'Export procedures'],
-            price: 'KSh 12,000'
+            price: 'KSh 2,000'
         },
         {
             title: 'Farm Technology',
             duration: '1 Day',
             topics: ['Modern equipment', 'Digital tools', 'Efficiency systems'],
-            price: 'KSh 5,000'
+            price: 'KSh 2,000'
         }
     ];
 
@@ -282,7 +282,7 @@ export default function Tours() {
             {/* Hero Section */}
             <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-24">
                 <div className="absolute inset-0 bg-cover bg-center opacity-20"
-                     style={{backgroundImage: 'url(https://images.unsplash.com/photo-1497366216548-37526070297c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'}}>
+                     style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/Sl3.png)'}}>
                 </div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">Farm Experiences & Training Center</h1>

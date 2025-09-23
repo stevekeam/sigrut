@@ -33,7 +33,7 @@ Route::get('/Farm_Tours', function () {
 
 
 Route::get('/Poultry', function () {
-    return Inertia::render('poultry');
+    return Inertia::render('Poultry');
 })->name('Poultry');
 
 Route::get('/Moringa', function () {

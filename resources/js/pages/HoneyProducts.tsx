@@ -174,7 +174,7 @@ export default function HoneyProducts() {
             {/* Hero Section */}
             <section id="hero" className="relative bg-gradient-to-r from-amber-600 to-amber-800 text-white py-24">
                 <div className="absolute inset-0 bg-cover bg-center opacity-20"
-                     style={{backgroundImage: 'url(https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'}}>
+                     style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0047.jpg)'}}>
                 </div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">Pure Natural Honey</h1>
