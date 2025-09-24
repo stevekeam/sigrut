@@ -27,9 +27,9 @@ Route::get('/Conference', function () {
     return Inertia::render('Conference');
 })->name('Conference');
 
-Route::get('/Farm_Tours', function () {
-    return Inertia::render('Farm_Tours');
-})->name('Farm_Tours');
+Route::get('/Agritourism', function () {
+    return Inertia::render('Agritourism');
+})->name('Agritourism');
 
 
 Route::get('/Poultry', function () {

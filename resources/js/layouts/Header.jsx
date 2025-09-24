@@ -3,20 +3,52 @@ import { dashboard, login, register } from '@/routes';
 import { useState, useEffect } from 'react';
 
 export default function Header() {
-    const { auth } = usePage().props; // ✅ no <SharedData>
+    const { auth } = usePage().props;
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [activeSection, setActiveSection] = useState('');
+    const [activeDropdown, setActiveDropdown] = useState(null);
 
-    // Navigation items
+    // Navigation items with hierarchy
     const navigation = [
-        { name: 'Home', href: '/', current: true },
-        { name: 'About', href: '/About', current: false },
-        { name: 'HoneyProducts', href: '/HoneyProducts', current: false },
-        { name: 'Avocado', href: '/Avocado', current: false },
-        { name: 'Poultry', href: '/Poultry', current: false },
-        { name: 'Accommodation', href: '/Accommodation', current: false },
-        { name: 'Farm_Tours', href: '/Farm_Tours', current: false },
-        { name: 'Contact_Us', href: '/Contact_Us', current: false },
+        { 
+            name: 'Home', 
+            href: '/', 
+            current: true,
+            type: 'link'
+        },
+        { 
+            name: 'About', 
+            href: '/About', 
+            current: false,
+            type: 'link'
+        },
+        { 
+            name: ' Our Products', 
+            href: '#',
+            current: false,
+            type: 'dropdown',
+            children: [
+                { name: 'Hass Avocado', href: '/Avocado' },
+                { name: 'Honey', href: '/HoneyProducts' },
+                { name: 'Poultry', href: '/Poultry' }
+            ]
+        },
+        { 
+            name: ' Our Services', 
+            href: '#',
+            current: false,
+            type: 'dropdown',
+            children: [
+                { name: 'Agritourism', href: '/Agritourism' },
+                { name: 'Accommodation', href: '/Accommodation' }
+            ]
+        },
+        { 
+            name: 'Contact Us', 
+            href: '/Contact_Us', 
+            current: false,
+            type: 'link'
+        },
     ];
 
     // Scroll spy
@@ -38,13 +70,20 @@ export default function Header() {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    // Smooth scroll
-    const scrollToSection = (sectionId) => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-            element.scrollIntoView({ behavior: 'smooth' });
-        }
+    // Toggle dropdown
+    const toggleDropdown = (menuName) => {
+        setActiveDropdown(activeDropdown === menuName ? null : menuName);
     };
+
+    // Close dropdowns when clicking outside
+    useEffect(() => {
+        const handleClickOutside = () => {
+            setActiveDropdown(null);
+        };
+
+        document.addEventListener('click', handleClickOutside);
+        return () => document.removeEventListener('click', handleClickOutside);
+    }, []);
 
     return (
         <header className="bg-green-800 text-white sticky top-0 z-50 shadow-lg">
@@ -62,7 +101,7 @@ export default function Header() {
                         </div>
                     </div>
                     <div className="flex items-center space-x-4">
-                        <span>🌤️ Siaya, Kenya</span>
+                        <span>📍 Siaya, Kenya</span>
                         <span>🏆 Certified Organic</span>
                     </div>
                 </div>
@@ -71,30 +110,58 @@ export default function Header() {
                 <div className="flex justify-between items-center py-4">
                     {/* Logo */}
                     <Link href="/" className="flex items-center space-x-3">
-                        <Link href="/" className="flex items-center">
-  <img
-    src="https://Sigrutfarmsinternational.com/wp-content/uploads/2024/12/new-sigrut.png"
-    alt="Sigrut Farms Logo"
-    className="h-12 w-auto object-contain"
-  />
-</Link>
-
+                        <img
+                            src="https://Sigrutfarmsinternational.com/wp-content/uploads/2024/12/new-sigrut.png"
+                            alt="Sigrut Farms Logo"
+                            className="h-12 w-auto object-contain"
+                        />
                         <div>
                             <h1 className="text-2xl font-bold">Sigrut Orchard & Hive Ltd</h1>
-                            <p className="text-green-200 text-sm">Sustainable Agriculture</p>
+                            <p className="text-green-200 text-sm">Freshness Begins At Home</p>
                         </div>
                     </Link>
 
                     {/* Desktop Navigation */}
-                    <nav className="hidden lg:flex items-center space-x-8">
+                    <nav className="hidden lg:flex items-center space-x-2 relative">
                         {navigation.map((item) => (
-                            <Link
-                                key={item.name}
-                                href={item.href}
-                                className="hover:text-amber-300 transition-colors font-medium py-2 border-b-2 border-transparent hover:border-amber-300"
-                            >
-                                {item.name}
-                            </Link>
+                            <div key={item.name} className="relative">
+                                {item.type === 'link' ? (
+                                    <Link
+                                        href={item.href}
+                                        className="hover:text-amber-300 transition-colors font-medium py-2 px-4 border-b-2 border-transparent hover:border-amber-300"
+                                    >
+                                        {item.name}
+                                    </Link>
+                                ) : (
+                                    <div className="relative">
+                                        <button
+                                            onClick={(e) => {
+                                                e.stopPropagation();
+                                                toggleDropdown(item.name);
+                                            }}
+                                            className="hover:text-amber-300 transition-colors font-medium py-2 px-4 border-b-2 border-transparent hover:border-amber-300 flex items-center"
+                                        >
+                                            {item.name}
+                                            <span className="ml-1">▼</span>
+                                        </button>
+                                        
+                                        {activeDropdown === item.name && (
+                                            <div className="absolute top-full left-0 mt-1 bg-green-900 border border-green-700 rounded-lg shadow-xl min-w-48 z-50">
+                                                {item.children.map((child) => (
+                                                    <Link
+                                                        key={child.name}
+                                                        href={child.href}
+                                                        className="block px-4 py-3 hover:bg-green-700 transition-colors border-l-4 border-transparent hover:border-amber-300 whitespace-nowrap"
+                                                        onClick={() => setActiveDropdown(null)}
+                                                    >
+                                                        {child.name}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </div>
+                                )}
+                            </div>
                         ))}
                     </nav>
 
@@ -148,14 +215,44 @@ export default function Header() {
                     <div className="lg:hidden bg-green-900 border-t border-green-700">
                         <nav className="py-4">
                             {navigation.map((item) => (
-                                <Link
-                                    key={item.name}
-                                    href={item.href}
-                                    className="block py-3 px-4 hover:bg-green-700 transition-colors border-l-4 border-transparent hover:border-amber-300"
-                                    onClick={() => setIsMenuOpen(false)}
-                                >
-                                    {item.name}
-                                </Link>
+                                <div key={item.name}>
+                                    {item.type === 'link' ? (
+                                        <Link
+                                            href={item.href}
+                                            className="block py-3 px-4 hover:bg-green-700 transition-colors border-l-4 border-transparent hover:border-amber-300"
+                                            onClick={() => setIsMenuOpen(false)}
+                                        >
+                                            {item.name}
+                                        </Link>
+                                    ) : (
+                                        <div>
+                                            <button
+                                                onClick={() => toggleDropdown(item.name)}
+                                                className="w-full text-left py-3 px-4 hover:bg-green-700 transition-colors border-l-4 border-transparent hover:border-amber-300 flex justify-between items-center"
+                                            >
+                                                {item.name}
+                                                <span>{activeDropdown === item.name ? '▲' : '▼'}</span>
+                                            </button>
+                                            {activeDropdown === item.name && (
+                                                <div className="bg-green-800 pl-6">
+                                                    {item.children.map((child) => (
+                                                        <Link
+                                                            key={child.name}
+                                                            href={child.href}
+                                                            className="block py-3 px-4 hover:bg-green-700 transition-colors border-l-4 border-transparent hover:border-amber-300"
+                                                            onClick={() => {
+                                                                setIsMenuOpen(false);
+                                                                setActiveDropdown(null);
+                                                            }}
+                                                        >
+                                                            {child.name}
+                                                        </Link>
+                                                    ))}
+                                                </div>
+                                            )}
+                                        </div>
+                                    )}
+                                </div>
                             ))}
                             
                             {/* Mobile Auth */}

@@ -1,301 +1,359 @@
 import AppLayout from '../layouts/app-layout';
 
 export default function Home() {
-    // Featured products data
-    const featuredProducts = [
+    // Avocado Process Steps
+    const processSteps = [
         {
-            id: 1,
-            name: 'Hass Avocado',
-            category: 'Fresh Produce',
-            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0079.jpg',
-            description: 'Premium Hass avocados, rich in nutrients and perfect for export quality',
-            price: 'From KSh 50 each'
+            step: 1,
+            title: 'Orchard Management',
+            icon: '🌳',
+            description: 'Sustainable farming practices in our avocado orchards',
+            details: ['Organic fertilization', 'Precision irrigation', 'Soil health monitoring', 'Integrated pest management']
         },
         {
-            id: 2,
-            name: 'Pure Honey',
-            category: 'Bee Products',
-            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-01-31-at-10.33.50_bc8b9276-e1738586951867.jpg',
-            description: '100% natural raw honey, straight from our beehives',
-            price: 'From KSh 500'
+            step: 2,
+            title: 'Quality Harvesting',
+            icon: '👨‍🌾',
+            description: 'Hand-picked at perfect maturity for optimal quality',
+            details: ['Selective harvesting', 'Proper handling techniques', 'Quality grading', 'Dry matter testing']
         },
         {
-            id: 3,
-            name: 'Fresh Poultry',
-            category: 'Livestock',
-            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0085.jpg',
-            description: 'Free-range chickens and eggs from our healthy flocks',
-            price: 'From KSh 800'
+            step: 3,
+            title: 'Cold Chain Processing',
+            icon: '❄️',
+            description: 'State-of-the-art cold storage facilities',
+            details: ['Temperature control', 'Quick cooling', 'Quality preservation', 'Export readiness']
+        },
+        {
+            step: 4,
+            title: 'Export Preparation',
+            icon: '📦',
+            description: 'Meeting international standards and certifications',
+            details: ['Phytosanitary compliance', 'Proper packaging', 'Documentation', 'Quality assurance']
         }
     ];
 
-    // Services data
-    const services = [
+    // Quality Certifications
+    const certifications = [
         {
-            id: 1,
-            name: 'Farm Accommodation',
-            icon: '🏡',
-            description: 'Experience rural life in our comfortable farmstay accommodations',
-            features: ['Private cottages', 'Farm-to-table meals', 'Nature walks']
+            name: 'GlobalGAP Certified',
+            description: 'Meeting international Good Agricultural Practices',
+            icon: '🌍'
         },
         {
-            id: 2,
-            name: 'Conference Facilities',
-            icon: '💼',
-            description: 'Host your events in our serene conference facilities',
-            features: ['100+ capacity', 'Audio-visual equipment', 'Catering services']
+            name: 'KEPHIS Approved',
+            description: 'Kenya Plant Health Inspectorate Service certification',
+            icon: '✅'
         },
         {
-            id: 3,
-            name: 'Farm Tours',
-            icon: '🚜',
-            description: 'Educational tours showcasing sustainable farming practices',
-            features: ['Guided tours', 'Hands-on activities', 'Group discounts']
+            name: 'Organic Compliance',
+            description: 'Adherence to organic farming standards',
+            icon: '🌱'
+        },
+        {
+            name: 'HACCP Certified',
+            description: 'Hazard Analysis Critical Control Point system',
+            icon: '⚡'
+        }
+    ];
+
+    // Orchard Features
+    const orchardFeatures = [
+        {
+            metric: '500+',
+            label: 'Hectares of Orchards',
+            description: 'Expansive avocado plantations across optimal growing regions'
+        },
+        {
+            metric: '18-22%',
+            label: 'Oil Content',
+            description: 'Premium Hass avocados with perfect dry matter levels'
+        },
+        {
+            metric: '100%',
+            label: 'Traceability',
+            description: 'Complete supply chain transparency from farm to market'
+        },
+        {
+            metric: '24/7',
+            label: 'Quality Monitoring',
+            description: 'Continuous quality control throughout the process'
         }
     ];
 
     return (
-        <AppLayout title="Sigrut Orchard & Hive Ltd - Premium Agricultural Products & Farm Experiences">
-            {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
+        <AppLayout title="Sigrut Farms - Premium Hass Avocado Orchard - Kenya's Finest Export Quality">
+            {/* Hero Section - Updated with Left-aligned Text */}
+            <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
                 <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-20"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0050-e1737969730374.jpg)'
+                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0105.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
                     }}
                 ></div>
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black opacity-30"></div>
+                
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-3xl">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            Premium Agricultural Products & Farm Experiences
-                        </h1>
-                        <p className="text-xl mb-8 opacity-90">
-                            Discover the finest Hass avocados, pure honey, fresh poultry, and unforgettable farm experiences 
-                            at Sigrut Farms - where quality meets sustainability.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
+                    <div className="max-w-2xl">
+                        {/* Left-aligned content */}
+                        <div className="mb-8">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                               You Deserve Fresh Avos
+                            </h1>
+                            <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
+                                Kenya's leading exporter of premium Hass avocados. Experience our commitment to quality, 
+                                sustainability, and international excellence.
+                            </p>
+                        </div>
+                        
+                        {/* Primary Action Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-4 mb-8">
                             <a 
-                                href="#products" 
-                                className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-amber-600 transition-colors"
+                                href="#process" 
+                                className="bg-amber-500 text-white px-8 py-4 rounded-lg font-semibold hover:bg-amber-600 transition-colors text-lg text-center"
                             >
-                                Explore Products
+                                Our Quality Process
                             </a>
                             <a 
-                                href="#services" 
-                                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-green-800 transition-colors"
+                                href="#certifications" 
+                                className="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors text-lg text-center"
                             >
-                                Our Services
+                                View Certifications
+                            </a>
+                        </div>
+
+                        {/* Explore More Buttons */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                            <a 
+                                href="/about" 
+                                className="bg-green-600 bg-opacity-80 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center text-sm"
+                            >
+                                About Our Farm
+                            </a>
+                            <a 
+                                href="/products" 
+                                className="bg-green-600 bg-opacity-80 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center text-sm"
+                            >
+                                Our Products
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Featured Products */}
-            <section id="products" className="py-16 bg-amber-50">
+            {/* Alternative Hero Section Option - Text Overlay at Bottom */}
+            {/* Uncomment this section if you prefer text at the bottom */}
+            {/*
+            <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-end">
+                <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0105.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                    }}
+                ></div>
+                <div className="absolute inset-0 bg-black opacity-20"></div>
+                
+                <div className="container mx-auto px-4 relative z-10 pb-16">
+                    <div className="max-w-4xl mx-auto text-center">
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                            Premium Hass Avocado Orchard
+                        </h1>
+                        <p className="text-xl md:text-2xl mb-8 opacity-90">
+                            Kenya's leading exporter of premium Hass avocados
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a 
+                                href="#process" 
+                                className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
+                            >
+                                Explore Our Process
+                            </a>
+                            <a 
+                                href="/gallery" 
+                                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors"
+                            >
+                                View Gallery
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            */}
+
+            {/* Rest of your existing sections remain unchanged */}
+            <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Our Premium Products</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Our Orchard Excellence</h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Quality agricultural products grown and produced with care on our sustainable farm
+                            Committed to producing the finest Hass avocados through sustainable practices and quality focus
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {featuredProducts.map(product => (
-                            <div key={product.id} className="bg-white rounded-xl shadow-lg overflow-hidden transition-transform hover:scale-105">
-                                <img 
-                                    src={product.image} 
-                                    alt={product.name}
-                                    className="w-full h-48 object-cover"
-                                />
-                                <div className="p-6">
-                                    <span className="inline-block bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm mb-2">
-                                        {product.category}
-                                    </span>
-                                    <h3 className="text-xl font-bold text-gray-800 mb-2">{product.name}</h3>
-                                    <p className="text-gray-600 mb-4">{product.description}</p>
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-amber-600 font-bold">{product.price}</span>
-                                        <a 
-                                            href={`/${product.name.toLowerCase().replace(' ', '-')}`}
-                                            className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
-                                        >
-                                            View Details
-                                        </a>
-                                    </div>
-                                </div>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {orchardFeatures.map((feature, index) => (
+                            <div key={index} className="text-center p-6">
+                                <div className="text-4xl font-bold text-amber-600 mb-2">{feature.metric}</div>
+                                <h3 className="text-xl font-semibold text-green-800 mb-2">{feature.label}</h3>
+                                <p className="text-gray-600 text-sm">{feature.description}</p>
                             </div>
                         ))}
-                    </div>
-
-                    <div className="text-center mt-12">
-                        <a 
-                            href="/products"
-                            className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors"
-                        >
-                            View All Products
-                        </a>
                     </div>
                 </div>
             </section>
 
-            {/* Services Section */}
-            <section id="services" className="py-16 bg-white">
+            {/* Process Section */}
+            <section id="process" className="py-16 bg-green-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Farm Services & Experiences</h2>
-                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Beyond agriculture, we offer unique experiences and facilities for visitors and businesses
+                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Our Quality Process</h2>
+                        <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                            From orchard to export, every step is meticulously managed to ensure premium quality 
+                            that meets international standards
                         </p>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {services.map(service => (
-                            <div key={service.id} className="bg-green-50 rounded-xl p-6 border border-green-200">
-                                <div className="text-4xl mb-4">{service.icon}</div>
-                                <h3 className="text-xl font-bold text-green-800 mb-3">{service.name}</h3>
-                                <p className="text-gray-700 mb-4">{service.description}</p>
-                                <ul className="space-y-2">
-                                    {service.features.map((feature, index) => (
-                                        <li key={index} className="flex items-center text-green-700">
-                                            <span className="mr-2">✓</span> {feature}
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {processSteps.map((step) => (
+                            <div key={step.step} className="bg-white rounded-xl p-6 shadow-lg text-center">
+                                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <span className="text-2xl">{step.icon}</span>
+                                </div>
+                                <div className="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-4 text-sm font-bold">
+                                    {step.step}
+                                </div>
+                                <h3 className="text-xl font-bold text-green-800 mb-3">{step.title}</h3>
+                                <p className="text-gray-700 mb-4">{step.description}</p>
+                                <ul className="space-y-2 text-left">
+                                    {step.details.map((detail, index) => (
+                                        <li key={index} className="flex items-center text-sm text-gray-600">
+                                            <span className="mr-2">•</span> {detail}
                                         </li>
                                     ))}
                                 </ul>
-                                <a 
-                                    href={`/${service.name.toLowerCase().replace(' ', '-')}`}
-                                    className="mt-6 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors w-full block text-center"
-                                >
-                                    Learn More
-                                </a>
                             </div>
                         ))}
                     </div>
                 </div>
             </section>
 
-            {/* Why Choose Us */}
+            {/* Certifications Section */}
+            <section id="certifications" className="py-16 bg-white">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">International Certifications</h2>
+                        <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                            Our commitment to quality is validated by internationally recognized certifications
+                        </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                        {certifications.map((cert, index) => (
+                            <div key={index} className="text-center p-6 bg-green-50 rounded-lg">
+                                <div className="text-4xl mb-4">{cert.icon}</div>
+                                <h3 className="text-lg font-bold text-green-800 mb-2">{cert.name}</h3>
+                                <p className="text-gray-700 text-sm">{cert.description}</p>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            </section>
+
+            {/* Orchard Gallery */}
+            <section className="py-16 bg-green-50">
+                <div className="container mx-auto px-4">
+                    <div className="text-center mb-12">
+                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">Our Orchard in Pictures</h2>
+                        <p className="text-lg text-gray-600">A visual journey through our sustainable avocado orchards</p>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <div className="rounded-lg overflow-hidden shadow-lg">
+                            <img 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0079.jpg" 
+                                alt="Avocado Orchard" 
+                                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <div className="rounded-lg overflow-hidden shadow-lg">
+                            <img 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0086.jpg" 
+                                alt="Harvesting Process" 
+                                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                        <div className="rounded-lg overflow-hidden shadow-lg">
+                            <img 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0167.jpg" 
+                                alt="Quality Control" 
+                                className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* Sustainability Commitment */}
             <section className="py-16 bg-gradient-to-br from-green-800 to-green-900 text-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Why Choose Sigrut Farms?</h2>
+                        <h2 className="text-3xl md:text-4xl font-bold mb-4">Sustainable Farming Commitment</h2>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-                        <div className="text-center">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                        <div className="text-center p-6">
                             <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🌿</span>
+                                <span className="text-2xl">💧</span>
                             </div>
-                            <h3 className="text-xl font-bold mb-2">Sustainable Farming</h3>
-                            <p className="text-green-100">Environmentally conscious practices that protect our ecosystem</p>
+                            <h3 className="text-xl font-bold mb-2">Water Conservation</h3>
+                            <p className="text-green-100">Efficient irrigation systems and rainwater harvesting</p>
                         </div>
 
-                        <div className="text-center">
+                        <div className="text-center p-6">
                             <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">⭐</span>
+                                <span className="text-2xl">🌱</span>
                             </div>
-                            <h3 className="text-xl font-bold mb-2">Premium Quality</h3>
-                            <p className="text-green-100">Export-grade products meeting international standards</p>
+                            <h3 className="text-xl font-bold mb-2">Soil Health</h3>
+                            <p className="text-green-100">Organic matter management and erosion control</p>
                         </div>
 
-                        <div className="text-center">
+                        <div className="text-center p-6">
                             <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🚚</span>
+                                <span className="text-2xl">👨‍🌾</span>
                             </div>
-                            <h3 className="text-xl font-bold mb-2">Nationwide Delivery</h3>
-                            <p className="text-green-100">Fresh products delivered across Kenya</p>
-                        </div>
-
-                        <div className="text-center">
-                            <div className="bg-green-600 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                                <span className="text-2xl">🤝</span>
-                            </div>
-                            <h3 className="text-xl font-bold mb-2">Community Focused</h3>
-                            <p className="text-green-100">Supporting local communities through employment and training</p>
+                            <h3 className="text-xl font-bold mb-2">Community Support</h3>
+                            <p className="text-green-100">Fair employment and local community development</p>
                         </div>
                     </div>
                 </div>
             </section>
 
-            {/* Testimonials */}
+            {/* Trust Building CTA */}
             <section className="py-16 bg-amber-50">
-                <div className="container mx-auto px-4">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-4">What Our Customers Say</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="bg-white p-6 rounded-xl shadow-md">
-                            <div className="flex text-amber-400 mb-4">
-                                {'★'.repeat(5)}
-                            </div>
-                            <p className="text-gray-700 italic mb-4">
-                                "The Hass avocados from Sigrut Farms are exceptional quality. Perfect for export and our international clients are always satisfied."
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-12 h-12 bg-green-200 rounded-full mr-4"></div>
-                                <div>
-                                    <p className="font-bold text-green-800">James K.</p>
-                                    <p className="text-sm text-gray-600">Export Business Owner</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-xl shadow-md">
-                            <div className="flex text-amber-400 mb-4">
-                                {'★'.repeat(5)}
-                            </div>
-                            <p className="text-gray-700 italic mb-4">
-                                "We hosted our company retreat at Sigrut Farms and the experience was unforgettable. The accommodation and conference facilities were perfect."
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-12 h-12 bg-green-200 rounded-full mr-4"></div>
-                                <div>
-                                    <p className="font-bold text-green-800">Sarah M.</p>
-                                    <p className="text-sm text-gray-600">Corporate Client</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div className="bg-white p-6 rounded-xl shadow-md">
-                            <div className="flex text-amber-400 mb-4">
-                                {'★'.repeat(5)}
-                            </div>
-                            <p className="text-gray-700 italic mb-4">
-                                "The farm tour was educational and fun for our students. They learned so much about sustainable agriculture in a hands-on way."
-                            </p>
-                            <div className="flex items-center">
-                                <div className="w-12 h-12 bg-green-200 rounded-full mr-4"></div>
-                                <div>
-                                    <p className="font-bold text-green-800">Dr. Wanjiku</p>
-                                    <p className="text-sm text-gray-600">School Principal</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-16 bg-green-700 text-white">
                 <div className="container mx-auto px-4 text-center">
-                    <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to Experience Sigrut Farms?</h2>
-                    <p className="text-xl mb-8 max-w-2xl mx-auto">
-                        Whether you're looking for premium agricultural products or a unique farm experience, we're here to serve you.
+                    <h2 className="text-3xl md:text-4xl font-bold text-green-800 mb-6">Building Trust Through Transparency</h2>
+                    <p className="text-xl mb-8 max-w-3xl mx-auto text-gray-700">
+                        We believe in open communication and building long-term partnerships based on trust and quality. 
+                        Contact us to learn more about our orchard operations and quality standards.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a 
-                            href="/contact" 
-                            className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
+                            href="/avocado" 
+                            className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors"
                         >
-                            Contact Us
+                            Learn About Our Avocados
                         </a>
                         <a 
-                            href="tel:+254743200200" 
-                            className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors"
+                            href="/contact" 
+                            className="border-2 border-green-600 text-green-600 px-8 py-3 rounded-lg font-semibold hover:bg-green-600 hover:text-white transition-colors"
                         >
-                            Call Now: +254 743 200 200
+                            Request Orchard Visit
                         </a>
                     </div>
                 </div>

@@ -1,3 +1,4 @@
+import { title } from 'process';
 import AppLayout from '../layouts/app-layout';
 
 export default function HassAvocado() {
@@ -8,24 +9,19 @@ export default function HassAvocado() {
             name: 'Premium Hass',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0086.jpg',
             description: 'Export-grade Hass avocados with perfect oil content and texture',
-            specs: ['Size: 12-14 count', 'Oil Content: 18-22%', 'Shelf Life: 21 days'],
-            price: 'KSh 50-80 each'
+          specs: ['Size: 12-14 count', 'Oil Content: 18-22%', 'Shelf Life: 21 days'],
         },
         {
             id: 2,
             name: 'Organic Hass',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0096.jpg',
-            description: 'Certified organic Hass avocados grown without synthetic pesticides',
-            specs: ['Organic Certified', 'Size: 14-16 count', 'Premium Quality'],
-            price: 'KSh 70-100 each'
+            description: 'Certified organic Hass avocados grown without synthetic pesticides',            specs: ['Organic Certified', 'Size: 14-16 count', 'Premium Quality'],
         },
         {
             id: 3,
             name: 'Jumbo Hass',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMB06qNFctujCXY2qqLUodsPTPkszZExAG47G1xK_RI_plaintext_638343485433066984.jpg',
-            description: 'Large-sized Hass avocados perfect for retail and food service',
-            specs: ['Size: 8-10 count', 'Perfect for slicing', 'High yield'],
-            price: 'KSh 90-120 each'
+            description: 'Large-sized Hass avocados perfect for retail and food service',            specs: ['Size: 8-10 count', 'Perfect for slicing', 'High yield'],
         }
     ];
 
@@ -57,27 +53,23 @@ export default function HassAvocado() {
     const trainingPrograms = [
         {
             title: 'Avocado Farming Basics',
-            duration: '2 Days',
+            duration: '2 Days',            
             topics: ['Variety selection', 'Soil preparation', 'Planting techniques'],
-            fee: 'KSh 5,000'
         },
         {
             title: 'Export Quality Production',
-            duration: '3 Days',
+            duration: '3 Days',            
             topics: ['GAP certification', 'Pest management', 'Harvest timing'],
-            fee: 'KSh 8,000'
         },
         {
             title: 'Post-Harvest Management',
-            duration: '2 Days',
+            duration: '2 Days',           
             topics: ['Cold chain management', 'Packing standards', 'Quality control'],
-            fee: 'KSh 6,000'
         },
         {
             title: 'Market Access & Export',
-            duration: '1 Day',
+            duration: '1 Day',           
             topics: ['Export procedures', 'Market requirements', 'Documentation'],
-            fee: 'KSh 3,000'
         }
     ];
 
@@ -189,7 +181,7 @@ export default function HassAvocado() {
                                     </div>
                                     
                                     <div className="flex justify-between items-center">
-                                        <span className="text-amber-600 font-bold text-lg">{variety.price}</span>
+                                        <span className="text-amber-600 font-bold text-lg">{variety.name}</span>
                                         <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
                                             Inquire Now
                                         </button>
@@ -270,7 +262,7 @@ export default function HassAvocado() {
                                     <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
                                         {program.duration}
                                     </span>
-                                    <span className="text-amber-600 font-bold">{program.fee}</span>
+                                    {/* You can display a property here, e.g. program.title or program.duration, or remove this line if not needed */}
                                 </div>
                                 <ul className="space-y-2 mb-4">
                                     {program.topics.map((topic, topicIndex) => (

@@ -1,22 +1,7 @@
 import AppLayout from '../layouts/app-layout';
 import { useState, useEffect } from 'react';
 
-export default function HoneyProducts() {
-    type CartItem = {
-        id: number;
-        name?: string;
-        type?: string;
-        image?: string;
-        description?: string;
-        price?: number;
-        size?: string;
-        benefits?: string[];
-        usage?: string;
-        quantity: number;
-    };
-    const [cart, setCart] = useState<CartItem[]>([]);
-    const [activeSection, setActiveSection] = useState('hero');
-
+const HoneyFarmPage = () => {
     // Honey products data
     const honeyProducts = [
         {
@@ -25,8 +10,6 @@ export default function HoneyProducts() {
             type: 'Pure & Unprocessed',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/02/WhatsApp-Image-2025-01-31-at-10.33.50_bc8b9276-e1738586951867.jpg',
             description: '100% pure honey straight from the hive, packed with natural enzymes and antioxidants',
-            price: 500,
-            size: '500g Jar',
             benefits: ['Boosts Immunity', 'Rich in Antioxidants', 'Natural Energy'],
             usage: 'Daily consumption, tea sweetener'
         },
@@ -36,8 +19,6 @@ export default function HoneyProducts() {
             type: 'Fresh from Hive',
             image: 'https://sigrutfarmsinternational.com/wp-content/uploads/2025/01/honeycomb.jpg',
             description: 'Experience honey in its most natural form - straight from the honeycomb',
-            price: 800,
-            size: '400g Piece',
             benefits: ['Pure Wax', 'Chewy Texture', 'Rich Flavor'],
             usage: 'Direct consumption, cheese pairing'
         },
@@ -47,8 +28,6 @@ export default function HoneyProducts() {
             type: 'Herbal Blends',
             image: 'https://sigrutfarmsinternational.com/wp-content/uploads/2025/01/infused-honey.jpg',
             description: 'Honey infused with natural herbs for enhanced health benefits',
-            price: 650,
-            size: '500g Jar',
             benefits: ['Herbal Benefits', 'Unique Flavors', 'Medicinal Properties'],
             usage: 'Therapeutic use, culinary experiments'
         },
@@ -58,8 +37,6 @@ export default function HoneyProducts() {
             type: 'Superfood',
             image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
             description: 'Nutrient-rich bee pollen collected from our hives',
-            price: 1200,
-            size: '200g Pack',
             benefits: ['Protein Source', 'Vitamins & Minerals', 'Energy Boost'],
             usage: 'Smoothies, yogurt topping'
         }
@@ -109,39 +86,19 @@ export default function HoneyProducts() {
     const tourPackages = [
         {
             name: 'Basic Apiary Tour',
-            price: 1500,
-            duration: '1 hour',
             includes: ['Beekeeping suit', 'Hive observation', 'Honey tasting']
         },
         {
             name: 'Full Beekeeping Experience',
-            price: 3000,
-            duration: '3 hours',
             includes: ['Full protective gear', 'Live hive handling', 'Honey extraction', 'Take-home honey']
         },
         {
             name: 'Beekeeping Workshop',
-            price: 5000,
-            duration: 'Full day',
             includes: ['Theoretical training', 'Practical sessions', 'Certificate', 'Lunch included']
         }
     ];
 
-    const addToCart = (product: { id: any; name?: string; type?: string; image?: string; description?: string; price?: number; size?: string; benefits?: string[]; usage?: string; }) => {
-        setCart(prevCart => {
-            const existingItem = prevCart.find(item => item.id === product.id);
-            if (existingItem) {
-                return prevCart.map(item => 
-                    item.id === product.id 
-                        ? { ...item, quantity: item.quantity + 1 }
-                        : item
-                );
-            }
-            return [...prevCart, { ...product, quantity: 1 }];
-        });
-    };
-
-    const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+    const [activeSection, setActiveSection] = useState('hero');
 
     // Scroll spy effect
     useEffect(() => {
@@ -187,7 +144,7 @@ export default function HoneyProducts() {
                             onClick={() => scrollToSection('products')}
                             className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors"
                         >
-                            Shop Our Honey
+                            View Our Products
                         </button>
                         <button 
                             onClick={() => scrollToSection('visit')}
@@ -218,17 +175,19 @@ export default function HoneyProducts() {
                                     <h3 className="text-xl font-bold text-amber-800 mb-2">{product.name}</h3>
                                     <p className="text-gray-600 mb-4 text-sm">{product.description}</p>
                                     
-                                    <div className="flex justify-between items-center mb-4">
-                                        <span className="text-2xl font-bold text-amber-600">KSh {product.price}</span>
-                                        <span className="text-sm text-gray-600">{product.size}</span>
+                                    <div className="mt-4">
+                                        <h4 className="font-semibold text-amber-700 mb-2">Benefits:</h4>
+                                        <ul className="text-sm text-gray-700 space-y-1">
+                                            {product.benefits.map((benefit, index) => (
+                                                <li key={index}>• {benefit}</li>
+                                            ))}
+                                        </ul>
                                     </div>
-
-                                    <button 
-                                        onClick={() => addToCart(product)}
-                                        className="w-full bg-amber-500 text-white py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
-                                    >
-                                        Add to Cart
-                                    </button>
+                                    
+                                    <div className="mt-4">
+                                        <h4 className="font-semibold text-amber-700 mb-1">Usage:</h4>
+                                        <p className="text-sm text-gray-600">{product.usage}</p>
+                                    </div>
                                 </div>
                             </div>
                         ))}
@@ -293,8 +252,6 @@ export default function HoneyProducts() {
                         {tourPackages.map((pkg, index) => (
                             <div key={index} className="bg-amber-700 rounded-xl p-6 text-center">
                                 <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                                <div className="text-3xl font-bold mb-4">KSh {pkg.price}</div>
-                                <div className="text-amber-200 mb-4">{pkg.duration}</div>
                                 <ul className="space-y-2 mb-6">
                                     {pkg.includes.map((item, idx) => (
                                         <li key={idx} className="flex items-center">
@@ -386,4 +343,6 @@ export default function HoneyProducts() {
             `}</style>
         </AppLayout>
     );
-}
+};
+
+export default HoneyFarmPage;
