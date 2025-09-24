@@ -16,7 +16,7 @@ export default function Header() {
         { name: 'Poultry', href: '/Poultry', current: false },
         { name: 'Accommodation', href: '/Accommodation', current: false },
         { name: 'Farm_Tours', href: '/Farm_Tours', current: false },
-        { name: 'Contact', href: '/Contact', current: false },
+        { name: 'Contact_Us', href: '/Contact_Us', current: false },
     ];
 
     // Scroll spy

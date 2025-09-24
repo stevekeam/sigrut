@@ -37,7 +37,7 @@ export default function Footer() {
         {
             title: 'Support',
             links: [
-                { name: 'Contact Us', href: '/Contact' },
+                { name: 'Contact_Us', href: '/Contact_Us' },
                 { name: 'FAQ', href: '/faq' },
                 { name: 'Shipping Info', href: '/shipping' },
                 { name: 'Returns', href: '/returns' },

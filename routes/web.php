@@ -40,6 +40,9 @@ Route::get('/Moringa', function () {
     return Inertia::render('Moringa');
 })->name('Moringa');
 
+Route::get('/Contact_Us', function () {
+    return Inertia::render('Contact_Us');})->name('Contact_Us');
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
