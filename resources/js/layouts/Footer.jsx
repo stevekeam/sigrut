@@ -100,7 +100,7 @@ export default function Footer() {
                                 <div className="space-y-3">
                                     {[
                                         { name: 'Farm Accommodation', href: '/Accommodation' },
-                                        { name: 'Conference Facilities', href: '/Farm_Tours' },
+                                        { name: 'Conference Facilities', href: '/Agritourism' },
                                         { name: 'Agritourism', href: '/Agritourism' },
                                         { name: 'Beekeeping Training', href: '/HoneyProducts' }
                                     ].map((link) => (
@@ -136,9 +136,9 @@ export default function Footer() {
                     {/* Legal Links */}
                     <div className="flex flex-wrap justify-center gap-6">
                         {[
-                            { name: 'Privacy Policy', href: '/privacy' },
-                            { name: 'Terms of Service', href: '/terms' },
-                            { name: 'Contact Us', href: '/contact' },
+                            { name: 'Privacy Policy', href: '/privacyPolicy' },
+                            { name: 'Tearms And Conditions', href: '/TearmsAndConditions' },
+                            { name: 'Contact Us', href: '/Contact_Us' },
                             { name: 'Sitemap', href: '/sitemap' }
                         ].map((link) => (
                             <Link 

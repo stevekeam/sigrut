@@ -40,8 +40,18 @@ Route::get('/Moringa', function () {
     return Inertia::render('Moringa');
 })->name('Moringa');
 
+Route::get('/privacyPolicy', function () {
+    return Inertia::render('privacyPolicy');
+})->name('privacyPolicy');
+
+Route::get('/TearmsAndConditions', function () {
+    return Inertia::render('TearmsAndConditions');
+})->name('TearmsAndConditions');
+
 Route::get('/Contact_Us', function () {
-    return Inertia::render('Contact_Us');})->name('Contact_Us');
+    return Inertia::render('Contact_Us');
+})->name('Contact_Us');
+
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
