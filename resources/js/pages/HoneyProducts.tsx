@@ -128,34 +128,33 @@ const HoneyFarmPage = () => {
 
     return (
         <AppLayout title="Pure Natural Honey - Sigrut Farms Beekeeping Experience">
-            {/* Hero Section */}
-            <section id="hero" className="relative bg-gradient-to-r from-amber-600 to-amber-800 text-white py-24">
-                <div className="absolute inset-0 bg-cover bg-center opacity-20"
-                     style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0047.jpg)'}}>
-                </div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Pure Natural Honey</h1>
-                    <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                        Experience the sweetness of nature with our sustainably harvested honey. 
-                        From hive to your table, we preserve every drop of goodness.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button 
-                            onClick={() => scrollToSection('products')}
-                            className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors"
-                        >
-                            View Our Products
-                        </button>
-                        <button 
-                            onClick={() => scrollToSection('visit')}
-                            className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-800 transition-colors"
-                        >
-                            Visit Our Apiary
-                        </button>
-                    </div>
-                </div>
-            </section>
-
+         {/* Hero Section */}
+<section id="hero" className="relative bg-gradient-to-r from-amber-600 to-amber-800 text-white py-24">
+    <div className="absolute inset-0 bg-cover bg-center opacity-80"
+         style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0047.jpg)'}}>
+    </div>
+    <div className="container mx-auto px-4 relative z-10 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Pure Natural Honey</h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+            Experience the sweetness of nature with our sustainably harvested honey. 
+            From hive to your table, we preserve every drop of goodness.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <button 
+                onClick={() => scrollToSection('products')}
+                className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors"
+            >
+                View Our Products
+            </button>
+            <button 
+                onClick={() => scrollToSection('visit')}
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-amber-800 transition-colors"
+            >
+                Visit Our Apiary
+            </button>
+        </div>
+    </div>
+</section>
             {/* Products Section */}
             <section id="products" className="py-20 bg-white">
                 <div className="container mx-auto px-4">

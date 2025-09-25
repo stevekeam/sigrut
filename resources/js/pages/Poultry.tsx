@@ -137,34 +137,46 @@ export default function Poultry() {
 
     return (
         <AppLayout title="Poultry Farming - Premium Chicken & Eggs - Sigrut Farms">
-            {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-24">
-                <div className="absolute inset-0 bg-cover bg-center opacity-20"
-                     style={{backgroundImage: 'url(https://images.unsplash.com/photo-1589923188659-1b6dee9c1e5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'}}>
-                </div>
-                <div className="container mx-auto px-4 relative z-10 text-center">
-                    <h1 className="text-4xl md:text-6xl font-bold mb-6">Premium Poultry Products</h1>
-                    <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                        Healthy, free-range chickens and eggs from our sustainable poultry farm. 
-                        Raised with care for superior taste and nutrition.
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <button 
-                            onClick={() => scrollToSection('products')}
-                            className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
-                        >
-                            View Products
-                        </button>
-                        <button 
-                            onClick={() => scrollToSection('contact')}
-                            className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors"
-                        >
-                            Contact Us
-                        </button>
-                    </div>
-                </div>
-            </section>
-
+          {/* Hero Section */}
+<section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-24 overflow-hidden">
+    <div className="absolute inset-0 bg-cover bg-center opacity-100"
+         style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250109-WA0043.jpg)'}}>
+    </div>
+    
+    {/* Animated background overlay */}
+    <div className="absolute inset-0 bg-gradient-to-r from-green-900/60 to-green-700/60"></div>
+    
+    <div className="container mx-auto px-4 relative z-10 text-center">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6 animate-fade-in-up">
+            Premium Poultry Products
+        </h1>
+        <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto leading-relaxed">
+            Healthy, free-range chickens and eggs from our sustainable poultry farm. 
+            Raised with care for superior taste and nutrition.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
+            <button 
+                onClick={() => scrollToSection('products')}
+                className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-all duration-300 transform hover:scale-105 shadow-lg"
+            >
+                View Products
+            </button>
+            <button 
+                onClick={() => scrollToSection('contact')}
+                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-all duration-300 transform hover:scale-105"
+            >
+                Contact Us
+            </button>
+        </div>
+    </div>
+    
+    {/* Scroll indicator */}
+    <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2"></div>
+        </div>
+    </div>
+</section>
             {/* Farming Practices */}
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">

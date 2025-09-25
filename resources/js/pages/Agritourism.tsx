@@ -267,7 +267,7 @@ export default function Tours() {
         <AppLayout title="Farm Tours, Training & Conference Facilities - Sigrut Farms">
          {/* Hero Section */}
 <section className="relative bg-gradient-to-r from-green-800/90 to-green-900/90 text-white py-24">
-    <div className="absolute inset-0 bg-cover bg-center opacity-40"
+    <div className="absolute inset-0 bg-cover bg-center opacity-80"
          style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/Sl3.png)'}}>
     </div>
     <div className="container mx-auto px-4 relative z-10 text-center">

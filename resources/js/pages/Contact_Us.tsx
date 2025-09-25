@@ -93,7 +93,7 @@ export default function Contact() {
         <AppLayout title="Contact Us - Sigrut Farms">
             {/* Hero Section */}
             <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
-                <div className="absolute inset-0 bg-cover bg-center opacity-20"
+                <div className="absolute inset-0 bg-cover bg-center opacity-80"
                      style={{backgroundImage: 'url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'}}>
                 </div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
