@@ -17,7 +17,7 @@ const HoneyFarmPage = () => {
             id: 2,
             name: 'Honeycomb',
             type: 'Fresh from Hive',
-            image: 'https://sigrutfarmsinternational.com/wp-content/uploads/2025/01/honeycomb.jpg',
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/472295245_17899293927097569_5952718528471721045_n-rotated-e1736329659603.jpg',
             description: 'Experience honey in its most natural form - straight from the honeycomb',
             benefits: ['Pure Wax', 'Chewy Texture', 'Rich Flavor'],
             usage: 'Direct consumption, cheese pairing'
@@ -26,7 +26,7 @@ const HoneyFarmPage = () => {
             id: 3,
             name: 'Infused Honey',
             type: 'Herbal Blends',
-            image: 'https://sigrutfarmsinternational.com/wp-content/uploads/2025/01/infused-honey.jpg',
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/1716211130700-e1736497594623.jpg',
             description: 'Honey infused with natural herbs for enhanced health benefits',
             benefits: ['Herbal Benefits', 'Unique Flavors', 'Medicinal Properties'],
             usage: 'Therapeutic use, culinary experiments'
@@ -35,7 +35,7 @@ const HoneyFarmPage = () => {
             id: 4,
             name: 'Bee Pollen',
             type: 'Superfood',
-            image: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80',
+            image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/16975209107069710d09150c846bca8c039bb6333b535-e1737969533896.webp',
             description: 'Nutrient-rich bee pollen collected from our hives',
             benefits: ['Protein Source', 'Vitamins & Minerals', 'Energy Boost'],
             usage: 'Smoothies, yogurt topping'

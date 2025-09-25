@@ -38,28 +38,34 @@ export default function About() {
 
     return (
         <AppLayout title="About Sigrut Farms - Sustainable Agriculture & Pure Natural Products">
-            {/* Hero Section with Breadcrumb */}
-            <section className="relative py-20 bg-gradient-to-r from-green-700 to-green-900 text-white">
-                <div className="absolute inset-0 bg-black opacity-20"></div>
-                <div className="container mx-auto px-6 relative z-10">
-                    {/* Breadcrumb */}
-                    
-                    <div className="max-w-3xl mx-auto text-center">
-                        <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Story</h1>
-                        <p className="text-xl md:text-2xl opacity-90 mb-8">
-                            From humble beginnings to becoming a leading sustainable farm in Kenya
-                        </p>
-                        <div className="flex justify-center space-x-4">
-                            <a href="#operations" className="bg-amber-500 px-6 py-2 rounded-lg hover:bg-amber-600 transition-colors font-medium">
-                                Our Operations
-                            </a>
-                            <a href="#certifications" className="border-2 border-white px-6 py-2 rounded-lg hover:bg-white hover:text-green-800 transition-colors font-medium">
-                                Certifications
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+  <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
+    <div 
+        className="absolute inset-0 bg-cover bg-center"
+        style={{
+            backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/avocados-4436393_1920.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
+        }}
+    ></div>
+    {/* Dark overlay for better text readability */}
+    <div className="absolute inset-0 bg-black opacity-30"></div>
+    
+    <div className="container mx-auto px-4 relative z-10">
+        <div className="max-w-2xl mx-auto"> {/* Added mx-auto for centering */}
+            {/* Centered content */}
+            <div className="text-center mb-8"> {/* Added text-center */}
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                    Our Story
+                </h1>
+                <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
+                    From humble beginnings to becoming a leading sustainable farm in Kenya
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+            
 
             {/* Quick Stats Section */}
             <section className="py-12 bg-white border-b">
@@ -101,7 +107,7 @@ export default function About() {
                         </div>
                         <div className="md:w-1/2">
                             <img 
-                                src="https://images.unsplash.com/photo-1587049633312-d628ae50a8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0108-e1738327438365.jpg" 
                                 alt="Sigrut Farms landscape" 
                                 className="rounded-lg shadow-lg w-full h-80 object-cover"
                             />
@@ -111,12 +117,12 @@ export default function About() {
             </section>
 
             {/* Story Section */}
-            <section className="py-16">
+            <section className="py-16 bg-white">
                 <div className="container mx-auto px-6">
                     <div className="flex flex-col md:flex-row items-center gap-10">
                         <div className="md:w-1/2 order-2 md:order-1">
                             <img 
-                                src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2024/08/WhatsApp-Image-2024-08-21-at-3.57.31-PM-e1738737500334.jpeg" 
                                 alt="Sustainable farming" 
                                 className="rounded-lg shadow-lg w-full h-80 object-cover"
                             />
@@ -163,7 +169,7 @@ export default function About() {
                         </div>
                         <div className="md:w-1/2">
                             <img 
-                                src="https://images.unsplash.com/photo-1598974357779-16d2db7fead4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80" 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0155.jpg" 
                                 alt="Community partnership" 
                                 className="rounded-lg shadow-lg w-full h-80 object-cover"
                             />
@@ -173,7 +179,7 @@ export default function About() {
             </section>
 
             {/* Timeline Section */}
-            <section className="py-16">
+            <section className="py-16 bg-white">
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Our Journey</h2>
                     
@@ -185,7 +191,7 @@ export default function About() {
                             {milestones.map((milestone, index) => (
                                 <div key={index} className={`flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}>
                                     <div className="md:w-1/2 mb-4 md:mb-0 md:px-8">
-                                        <div className={`bg-white p-6 rounded-lg shadow-md ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
+                                        <div className={`bg-white p-6 rounded-lg shadow-md border border-green-100 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
                                             <div className="text-2xl font-bold text-green-800 mb-2">{milestone.year}</div>
                                             <p className="text-gray-700">{milestone.event}</p>
                                         </div>
@@ -207,7 +213,7 @@ export default function About() {
                     <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Our Operations</h2>
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border border-green-100">
                             <div className="bg-amber-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">🍯</span>
                             </div>
@@ -220,7 +226,7 @@ export default function About() {
                             </a>
                         </div>
                         
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border border-green-100">
                             <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">🥑</span>
                             </div>
@@ -233,7 +239,7 @@ export default function About() {
                             </a>
                         </div>
                         
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border border-green-100">
                             <div className="bg-red-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">🐓</span>
                             </div>
@@ -246,7 +252,7 @@ export default function About() {
                             </a>
                         </div>
                         
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center hover:shadow-lg transition-shadow border border-green-100">
                             <div className="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">🏡</span>
                             </div>
@@ -262,14 +268,14 @@ export default function About() {
                 </div>
             </section>
 
-            {/* FAQ Section - Always Visible Questions */}
-            <section className="py-16">
+            {/* FAQ Section */}
+            <section className="py-16 bg-white">
                 <div className="container mx-auto px-6">
                     <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Frequently Asked Questions</h2>
                     
                     <div className="max-w-3xl mx-auto">
                         {faqItems.map((item, index) => (
-                            <div key={index} className="mb-6 bg-white rounded-lg shadow-sm border border-gray-200">
+                            <div key={index} className="mb-6 bg-white rounded-lg shadow-sm border border-green-100">
                                 <div className="p-6">
                                     <h3 className="font-semibold text-lg text-green-800 mb-3 flex items-center">
                                         <span className="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">Q</span>
@@ -294,7 +300,7 @@ export default function About() {
                     <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Our Certifications</h2>
                     
                     <div className="flex flex-wrap justify-center gap-10">
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center w-56 hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center w-56 hover:shadow-lg transition-shadow border border-green-100">
                             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">✅</span>
                             </div>
@@ -304,7 +310,7 @@ export default function About() {
                             </p>
                         </div>
                         
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center w-56 hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center w-56 hover:shadow-lg transition-shadow border border-green-100">
                             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">🌍</span>
                             </div>
@@ -314,7 +320,7 @@ export default function About() {
                             </p>
                         </div>
                         
-                        <div className="bg-white p-6 rounded-lg shadow-md text-center w-56 hover:shadow-lg transition-shadow">
+                        <div className="bg-white p-6 rounded-lg shadow-md text-center w-56 hover:shadow-lg transition-shadow border border-green-100">
                             <div className="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
                                 <span className="text-3xl">🐝</span>
                             </div>

@@ -141,7 +141,7 @@ export default function TermsAndConditions({ auth }: { auth: any }) {
                             Back to Home
                         </Link>
                         <Link 
-                            href="/rivacyPolicy" 
+                            href="/PrivacyPolicy" 
                             className="inline-flex items-center justify-center px-4 py-2 bg-gray-600 rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700 transition"
                         >
                             View Privacy Policy

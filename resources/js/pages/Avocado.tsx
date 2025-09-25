@@ -1,4 +1,3 @@
-import { title } from 'process';
 import AppLayout from '../layouts/app-layout';
 
 export default function HassAvocado() {
@@ -9,19 +8,21 @@ export default function HassAvocado() {
             name: 'Premium Hass',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0086.jpg',
             description: 'Export-grade Hass avocados with perfect oil content and texture',
-          specs: ['Size: 12-14 count', 'Oil Content: 18-22%', 'Shelf Life: 21 days'],
+            specs: ['Size: 12-14 count', 'Oil Content: 18-22%', 'Shelf Life: 21 days'],
         },
         {
             id: 2,
             name: 'Organic Hass',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0096.jpg',
-            description: 'Certified organic Hass avocados grown without synthetic pesticides',            specs: ['Organic Certified', 'Size: 14-16 count', 'Premium Quality'],
+            description: 'Certified organic Hass avocados grown without synthetic pesticides',
+            specs: ['Organic Certified', 'Size: 14-16 count', 'Premium Quality'],
         },
         {
             id: 3,
             name: 'Jumbo Hass',
             image: 'https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMB06qNFctujCXY2qqLUodsPTPkszZExAG47G1xK_RI_plaintext_638343485433066984.jpg',
-            description: 'Large-sized Hass avocados perfect for retail and food service',            specs: ['Size: 8-10 count', 'Perfect for slicing', 'High yield'],
+            description: 'Large-sized Hass avocados perfect for retail and food service',
+            specs: ['Size: 8-10 count', 'Perfect for slicing', 'High yield'],
         }
     ];
 
@@ -53,22 +54,22 @@ export default function HassAvocado() {
     const trainingPrograms = [
         {
             title: 'Avocado Farming Basics',
-            duration: '2 Days',            
+            duration: '2 Days',
             topics: ['Variety selection', 'Soil preparation', 'Planting techniques'],
         },
         {
             title: 'Export Quality Production',
-            duration: '3 Days',            
+            duration: '3 Days',
             topics: ['GAP certification', 'Pest management', 'Harvest timing'],
         },
         {
             title: 'Post-Harvest Management',
-            duration: '2 Days',           
+            duration: '2 Days',
             topics: ['Cold chain management', 'Packing standards', 'Quality control'],
         },
         {
             title: 'Market Access & Export',
-            duration: '1 Day',           
+            duration: '1 Day',
             topics: ['Export procedures', 'Market requirements', 'Documentation'],
         }
     ];
@@ -76,36 +77,45 @@ export default function HassAvocado() {
     return (
         <AppLayout title="Premium Hass Avocado - Sigrut Farms Export Quality">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
+            <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
                 <div 
-                    className="absolute inset-0 bg-cover bg-center opacity-20"
+                    className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0105.jpg)'
+                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/avocados-4436393_1920.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
                     }}
                 ></div>
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black opacity-30"></div>
+                
                 <div className="container mx-auto px-4 relative z-10">
-                    <div className="max-w-4xl">
-                        <h1 className="text-4xl md:text-6xl font-bold mb-6">
-                            Premium Hass Avocado
-                        </h1>
-                        <p className="text-xl mb-8 opacity-90">
-                            Export-quality Hass avocados grown in Kenya's prime avocado regions. 
-                            Our state-of-the-art cold room pack house ensures premium quality 
-                            from farm to international markets.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <a 
-                                href="#products" 
-                                className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-amber-600 transition-colors"
-                            >
-                                View Products
-                            </a>
-                            <a 
-                                href="#training" 
-                                className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold text-center hover:bg-white hover:text-green-800 transition-colors"
-                            >
-                                Farmer Training
-                            </a>
+                    <div className="max-w-2xl mx-auto">
+                        {/* Centered content */}
+                        <div className="text-center mb-8">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                                Premium Hass Avocados
+                            </h1>
+                            <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
+                                Export-quality Hass avocados from Kenya's leading sustainable farm
+                            </p>
+                            
+                            {/* Buttons moved outside the paragraph */}
+                            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                                <a 
+                                    href="#products" 
+                                    className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors inline-block"
+                                >
+                                    View Products
+                                </a>
+                                <a 
+                                    href="#training" 
+                                    className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors inline-block"
+                                >
+                                    Farmer Training
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -193,7 +203,7 @@ export default function HassAvocado() {
                 </div>
             </section>
 
-            {/* Cold Room Pack House */}
+           {/* Cold Room Pack House */}
             <section className="py-16 bg-gradient-to-br from-green-800 to-green-900 text-white">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
@@ -262,7 +272,6 @@ export default function HassAvocado() {
                                     <span className="bg-green-100 text-green-800 px-3 py-1 rounded-full text-sm">
                                         {program.duration}
                                     </span>
-                                    {/* You can display a property here, e.g. program.title or program.duration, or remove this line if not needed */}
                                 </div>
                                 <ul className="space-y-2 mb-4">
                                     {program.topics.map((topic, topicIndex) => (
@@ -378,14 +387,14 @@ export default function HassAvocado() {
                         Partner with us for quality Hass avocados, professional packing services, or comprehensive farmer training.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a 
-                            href="/contact" 
+                        <a
+                            href="/contact"
                             className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
                         >
                             Contact for Export
                         </a>
-                        <a 
-                            href="tel:+254743200200" 
+                        <a
+                            href="tel:+254743200200"
                             className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors"
                         >
                             Call: +254 743 200 200
@@ -394,7 +403,7 @@ export default function HassAvocado() {
                 </div>
             </section>
 
-            <style>{`
+            <style jsx>{`
                 html {
                     scroll-behavior: smooth;
                 }

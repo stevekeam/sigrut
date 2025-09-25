@@ -88,7 +88,7 @@ export default function Home() {
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0105.jpg)',
+                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/avocados-3594376_1920.jpg)',
                         backgroundSize: 'cover',
                         backgroundPosition: 'center',
                         backgroundRepeat: 'no-repeat'
