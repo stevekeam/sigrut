@@ -17,7 +17,7 @@ export default function Contact() {
         {
             icon: '📍',
             title: 'Visit Our Farm',
-            details: ['Sigrut Orchard And Hive Ltd', 'UKWALA, Siaya COUNTY, Kenya', 'Mon-Sat: 8:00 AM - 5:30 PM'],
+            details: ['Sigrut Orchard And Hive Ltd', 'Ukwala, Siaya County, Kenya', 'Mon-Sat: 8:00 AM - 5:30 PM'],
             link: '#map'
         },
         {

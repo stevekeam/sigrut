@@ -129,13 +129,13 @@ export default function Home() {
                         {/* Explore More Buttons */}
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                             <a 
-                                href="/about" 
+                                href="/About" 
                                 className="bg-green-600 bg-opacity-80 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center text-sm"
                             >
                                 About Our Farm
                             </a>
                             <a 
-                                href="/products" 
+                                href="/Products" 
                                 className="bg-green-600 bg-opacity-80 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center text-sm"
                             >
                                 Our Products
