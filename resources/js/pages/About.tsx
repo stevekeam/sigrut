@@ -8,15 +8,6 @@ export default function About() {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
 
-    const milestones = [
-        { year: "2010", event: "Sigrut Farms founded with 10 beehives" },
-        { year: "2013", event: "Expanded to Hass avocado farming" },
-        { year: "2015", event: "Received organic certification" },
-        { year: "2018", event: "Launched farm tours and accommodation" },
-        { year: "2020", event: "Reached 500+ beehives" },
-        { year: "2023", event: "Expanded export operations internationally" }
-    ];
-
     const faqItems = [
         {
             question: "Are your products certified organic?",
@@ -38,34 +29,34 @@ export default function About() {
 
     return (
         <AppLayout title="About Sigrut Farms - Sustainable Agriculture & Pure Natural Products">
-  <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
-    <div 
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-            backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/avocados-4436393_1920.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat'
-        }}
-    ></div>
-    {/* Dark overlay for better text readability */}
-    <div className="absolute inset-0 bg-black opacity-30"></div>
-    
-    <div className="container mx-auto px-4 relative z-10">
-        <div className="max-w-2xl mx-auto"> {/* Added mx-auto for centering */}
-            {/* Centered content */}
-            <div className="text-center mb-8"> {/* Added text-center */}
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
-                    Our Story
-                </h1>
-                <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
-                    From humble beginnings to becoming a leading sustainable farm in Kenya
-                </p>
-            </div>
-        </div>
-    </div>
-</section>
-            
+            {/* Hero Section */}
+            <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
+                <div 
+                    className="absolute inset-0 bg-cover bg-center"
+                    style={{
+                        backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/avocados-4436393_1920.jpg)',
+                        backgroundSize: 'cover',
+                        backgroundPosition: 'center',
+                        backgroundRepeat: 'no-repeat'
+                    }}
+                ></div>
+                {/* Dark overlay for better text readability */}
+                <div className="absolute inset-0 bg-black opacity-30"></div>
+                
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="max-w-2xl mx-auto">
+                        {/* Centered content */}
+                        <div className="text-center mb-8">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                                Our Story
+                            </h1>
+                            <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
+                                From humble beginnings to becoming a leading sustainable farm in Kenya
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             {/* Quick Stats Section */}
             <section className="py-12 bg-white border-b">
@@ -178,30 +169,145 @@ export default function About() {
                 </div>
             </section>
 
-            {/* Timeline Section */}
+            {/* Enhanced Timeline Section */}
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Our Journey</h2>
+                    <div className="text-center mb-12">
+                        <span className="text-green-600 font-semibold uppercase tracking-wide text-sm">Our Journey</span>
+                        <h2 className="text-3xl font-bold text-green-800 mt-2">Milestones of Sustainable Growth</h2>
+                        <p className="text-gray-600 max-w-2xl mx-auto mt-4">
+                            From humble beginnings to becoming a leader in sustainable agriculture
+                        </p>
+                    </div>
                     
                     <div className="relative">
-                        {/* Timeline line */}
-                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-green-300 hidden md:block"></div>
+                        {/* Main Timeline Line */}
+                        <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-green-300 via-green-400 to-green-500 hidden lg:block"></div>
                         
-                        <div className="space-y-12">
-                            {milestones.map((milestone, index) => (
-                                <div key={index} className={`flex ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} items-center`}>
-                                    <div className="md:w-1/2 mb-4 md:mb-0 md:px-8">
-                                        <div className={`bg-white p-6 rounded-lg shadow-md border border-green-100 ${index % 2 === 0 ? 'md:text-right' : 'md:text-left'}`}>
-                                            <div className="text-2xl font-bold text-green-800 mb-2">{milestone.year}</div>
-                                            <p className="text-gray-700">{milestone.event}</p>
+                        <div className="space-y-8 lg:space-y-12">
+                            {[
+                                {
+                                    year: "2019",
+                                    event: "The Humble Beginning",
+                                    description: "Founded with just 10 beehives, our journey began with a vision for sustainable agriculture and pure natural products.",
+                                    icon: "🥑",
+                                    image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/IMG-20231009-WA0248.jpg"
+                                },
+                                {
+                                    year: "2020",
+                                    event: "Expanding Our Roots",
+                                    description: "Ventured into Hass avocado farming, creating synergy between our pollinators and crops for integrated agriculture.",
+                                    icon: "🐝",
+                                    image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0050-e1737969730374.jpg"
+                                },
+                                {
+                                    year: "2022",
+                                    event: "Organic Certification",
+                                    description: "Achieved official organic certification, validating our commitment to chemical-free sustainable farming practices.",
+                                    icon: "🌿",
+                                    image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-14.32.31_420bdb10.jpg"
+                                },
+                                {
+                                    year: "2023",
+                                    event: "Opening Our Doors",
+                                    description: "Launched farm tours and accommodation, transforming from a production farm to an educational experience hub.",
+                                    icon: "🚪",
+                                    image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-14.32.31_420bdb10.jpg"
+                                },
+                                {
+                                    year: "2024",
+                                    event: "Sustainable Scale",
+                                    description: "Grew to 500+ beehives while maintaining biodiversity, proving that scale and sustainability can coexist.",
+                                    icon: "📈",
+                                    image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0049.jpg"
+                                },
+                                {
+                                    year: "2025",
+                                    event: "Global Recognition",
+                                    description: "Expanded international exports, sharing Kenyan agricultural excellence with the world while empowering our community.",
+                                    icon: "🌍",
+                                    image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-14.32.35_ad7a11fe.jpg"
+                                }
+                            ].map((milestone, index) => (
+                                <div key={index} className={`flex flex-col lg:flex-row items-center ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'}`}>
+                                    {/* Content Card */}
+                                    <div className="lg:w-5/12 mb-6 lg:mb-0">
+                                        <div className={`bg-white p-6 rounded-xl shadow-lg border border-green-100 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 ${index % 2 === 0 ? 'lg:mr-8' : 'lg:ml-8'}`}>
+                                            <div className="flex items-center gap-3 mb-3">
+                                                <div className="text-2xl">{milestone.icon}</div>
+                                                <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-semibold">
+                                                    {milestone.year}
+                                                </span>
+                                            </div>
+                                            <h3 className="text-xl font-bold text-green-800 mb-2">{milestone.event}</h3>
+                                            <p className="text-gray-700 leading-relaxed">{milestone.description}</p>
                                         </div>
                                     </div>
-                                    <div className="hidden md:flex md:w-1/12 justify-center">
-                                        <div className="w-6 h-6 bg-green-600 rounded-full border-4 border-white shadow"></div>
+                                    
+                                    {/* Timeline Dot */}
+                                    <div className="hidden lg:flex lg:w-2/12 justify-center relative z-10">
+                                        <div className="w-8 h-8 bg-green-600 rounded-full border-4 border-white shadow-lg flex items-center justify-center">
+                                            <div className="w-2 h-2 bg-white rounded-full"></div>
+                                        </div>
                                     </div>
-                                    <div className="md:w-5/12"></div>
+                                    
+                                    {/* Image/Spacer */}
+                                    <div className="lg:w-5/12 hidden lg:block">
+                                        <div className={`p-4 ${index % 2 === 0 ? 'lg:pl-8' : 'lg:pr-8'}`}>
+                                            <img 
+                                                src={milestone.image} 
+                                                alt={milestone.event}
+                                                className="rounded-lg shadow-md w-full h-40 object-cover opacity-90"
+                                            />
+                                        </div>
+                                    </div>
                                 </div>
                             ))}
+                        </div>
+                    </div>
+
+                    {/* Journey Summary */}
+                    <div className="mt-16 bg-gradient-to-r from-green-50 to-amber-50 rounded-2xl p-8 border border-green-200">
+                        <div className="text-center max-w-4xl mx-auto">
+                            <h3 className="text-2xl font-bold text-green-800 mb-4">The Sigrut Philosophy</h3>
+                            <p className="text-gray-700 text-lg leading-relaxed mb-6">
+                                Our journey is more than just dates and numbers—it's a testament to our belief that agriculture should work 
+                                in harmony with nature. Every step has been guided by our commitment to sustainability, quality, and community empowerment.
+                            </p>
+                            <div className="flex flex-wrap justify-center gap-4">
+                                <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                    Sustainable Practices
+                                </span>
+                                <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                    Community Focus
+                                </span>
+                                <span className="inline-flex items-center gap-2 bg-green-100 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                                    <span className="w-2 h-2 bg-green-500 rounded-full"></span>
+                                    Quality First
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Growth Metrics */}
+                    <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
+                            <div className="text-3xl font-bold text-green-700 mb-2">10 → 500+</div>
+                            <div className="text-gray-600 text-sm">Beehives Growth</div>
+                        </div>
+                        <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
+                            <div className="text-3xl font-bold text-green-700 mb-2">Local → Global</div>
+                            <div className="text-gray-600 text-sm">Market Reach</div>
+                        </div>
+                        <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
+                            <div className="text-3xl font-bold text-green-700 mb-2">13+ Years</div>
+                            <div className="text-gray-600 text-sm">Of Excellence</div>
+                        </div>
+                        <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
+                            <div className="text-3xl font-bold text-green-700 mb-2">50+ Families</div>
+                            <div className="text-gray-600 text-sm">Empowered</div>
                         </div>
                     </div>
                 </div>

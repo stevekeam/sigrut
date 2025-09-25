@@ -140,7 +140,7 @@ export default function Accommodation() {
     <div 
         className="absolute inset-0 bg-cover bg-center opacity-60"
         style={{
-            backgroundImage: 'url(https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'
+            backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-29-at-17.06.15_63c627b0.jpg)'
         }}
     ></div>
     <div className="absolute inset-0 bg-black opacity-30"></div>

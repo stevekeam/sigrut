@@ -17,53 +17,47 @@ export default function Contact() {
         {
             icon: '📍',
             title: 'Visit Our Farm',
-            details: ['Sigrut Farms', 'Nairobi, Kenya', 'Mon-Sat: 8:00 AM - 6:00 PM'],
+            details: ['Sigrut Orchard And Hive Ltd', 'UKWALA, Siaya COUNTY, Kenya', 'Mon-Sat: 8:00 AM - 5:30 PM'],
             link: '#map'
         },
         {
             icon: '📞',
             title: 'Call Us',
-            details: ['+254 743 200 200', '+254 700 000 000', '24/7 Customer Support'],
+            details: ['+254 743 200 200', '24/7 Customer Support'],
             link: 'tel:+254743200200'
         },
         {
             icon: '✉️',
             title: 'Email Us',
-            details: ['info@sigrutfarms.com', 'orders@sigrutfarms.com', 'honey@sigrutfarms.com'],
-            link: 'mailto:info@sigrutfarms.com'
+            details: ['info@sigrut.com'],
+            link: 'mailto:info@sigrut.com'
         },
-        {
-            icon: '💬',
-            title: 'WhatsApp',
-            details: ['+254 743 200 200', 'Quick responses', 'Order inquiries'],
-            link: 'https://wa.me/254743200200'
-        }
     ];
 
     // Departments with specific contacts
     const departments = [
         {
             name: 'General Inquiries',
-            email: 'info@sigrutfarms.com',
+            email: 'info@sigrut.com',
             phone: '+254 743 200 200',
             description: 'For general questions about our farm and services'
         },
         {
             name: 'Product Orders',
-            email: 'orders@sigrutfarms.com',
-            phone: '+254 700 000 001',
+            email: 'orders@sigrut.com',
+            phone: '+254 743 200 200',
             description: 'For ordering honey, avocados, poultry, and other products'
         },
         {
             name: 'Farm Tours & Accommodation',
-            email: 'tours@sigrutfarms.com',
-            phone: '+254 700 000 002',
+            email: 'tours@sigrut.com',
+            phone: '+254 743 200 200',
             description: 'Booking farm tours, accommodation, and conference facilities'
         },
         {
             name: 'Export & Wholesale',
-            email: 'export@sigrutfarms.com',
-            phone: '+254 700 000 003',
+            email: 'export@sigrut.com',
+            phone: '+254 743 200 200',
             description: 'For bulk orders and export inquiries'
         }
     ];
@@ -76,6 +70,7 @@ export default function Contact() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
+        setSubmitStatus('idle');
         
         // Simulate form submission
         try {
@@ -93,13 +88,15 @@ export default function Contact() {
         <AppLayout title="Contact Us - Sigrut Farms">
             {/* Hero Section */}
             <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
-                <div className="absolute inset-0 bg-cover bg-center opacity-80"
-                     style={{backgroundImage: 'url(https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80)'}}>
+                <div 
+                    className="absolute inset-0 bg-cover bg-center opacity-80"
+                    style={{backgroundImage: 'url(https://sigrutfarmsinternational.com/wp-content/uploads/2025/02/IMG-20250109-WA0075.jpg)'}}
+                >
                 </div>
                 <div className="container mx-auto px-4 relative z-10 text-center">
                     <h1 className="text-4xl md:text-6xl font-bold mb-6">Get In Touch</h1>
                     <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
-                        We'd love to hear from you. Reach out to us for inquiries, orders, or visits to our beautiful farm.
+                        We&apos;d love to hear from you. Reach out to us for inquiries, orders, or visits to our beautiful farm.
                     </p>
                 </div>
             </section>
@@ -107,18 +104,22 @@ export default function Contact() {
             {/* Contact Information */}
             <section className="py-16 bg-white">
                 <div className="container mx-auto px-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {contactInfo.map((item, index) => (
                             <a 
                                 key={index}
                                 href={item.link}
-                                className="bg-green-50 rounded-xl p-6 text-center hover:bg-green-100 transition-colors group"
+                                className="bg-green-50 rounded-xl p-6 text-center hover:bg-green-100 transition-colors duration-300 group block"
                             >
-                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{item.icon}</div>
+                                <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">{item.icon}</div>
                                 <h3 className="text-xl font-bold text-green-800 mb-3">{item.title}</h3>
-                                {item.details.map((detail, idx) => (
-                                    <p key={idx} className="text-gray-700">{detail}</p>
-                                ))}
+                                {Array.isArray(item.details) ? (
+                                    item.details.map((detail, idx) => (
+                                        <p key={idx} className="text-gray-700">{detail}</p>
+                                    ))
+                                ) : (
+                                    <p className="text-gray-700">{item.details}</p>
+                                )}
                             </a>
                         ))}
                     </div>
@@ -134,7 +135,6 @@ export default function Contact() {
                             <h2 className="text-3xl font-bold text-green-800 mb-6">Visit Our Farm</h2>
                             <div className="bg-white rounded-xl shadow-lg overflow-hidden">
                                 <div id="map" className="h-96 bg-gray-200">
-                                    {/* Embedded Google Map */}
                                     <iframe
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.818675678936!2d36.82121431475387!3d-1.282435599063266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d664f5b7c9%3A0x1d5e5e5e5e5e5e5e!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2ske!4v1234567890123!5m2!1sen!2ske"
                                         width="100%"
@@ -148,10 +148,10 @@ export default function Contact() {
                                 </div>
                                 <div className="p-6">
                                     <h3 className="text-lg font-semibold text-green-800 mb-2">Sigrut Farms Location</h3>
-                                    <p className="text-gray-700 mb-2">Nairobi, Kenya</p>
-                                    <p className="text-sm text-gray-600">Open Monday to Saturday, 8:00 AM - 6:00 PM</p>
+                                    <p className="text-gray-700 mb-2">UKWALA, Siaya County, Kenya</p>
+                                    <p className="text-sm text-gray-600">Open Monday to Saturday, 8:00 AM - 5:30 PM</p>
                                     <a 
-                                        href="https://maps.google.com/?q=Sigrut+Farms+Nairobi+Kenya"
+                                        href="https://maps.google.com/?q=Sigrut+Farms+UKWALA+Siaya+Kenya"
                                         target="_blank"
                                         rel="noopener noreferrer"
                                         className="inline-block mt-4 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
@@ -168,7 +168,7 @@ export default function Contact() {
                             <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8">
                                 {submitStatus === 'success' && (
                                     <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                                        Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.
+                                        Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
                                     </div>
                                 )}
                                 {submitStatus === 'error' && (
@@ -189,8 +189,9 @@ export default function Contact() {
                                             required
                                             value={formData.name}
                                             onChange={handleInputChange}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                                             placeholder="Your full name"
+                                            disabled={isSubmitting}
                                         />
                                     </div>
                                     <div>
@@ -204,8 +205,9 @@ export default function Contact() {
                                             required
                                             value={formData.email}
                                             onChange={handleInputChange}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                                             placeholder="your@email.com"
+                                            disabled={isSubmitting}
                                         />
                                     </div>
                                 </div>
@@ -221,8 +223,9 @@ export default function Contact() {
                                             name="phone"
                                             value={formData.phone}
                                             onChange={handleInputChange}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                                             placeholder="+254 XXX XXX XXX"
+                                            disabled={isSubmitting}
                                         />
                                     </div>
                                     <div>
@@ -235,7 +238,8 @@ export default function Contact() {
                                             required
                                             value={formData.subject}
                                             onChange={handleInputChange}
-                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
+                                            disabled={isSubmitting}
                                         >
                                             <option value="">Select a subject</option>
                                             <option value="general">General Inquiry</option>
@@ -260,15 +264,16 @@ export default function Contact() {
                                         rows={6}
                                         value={formData.message}
                                         onChange={handleInputChange}
-                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                                        className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent transition-colors"
                                         placeholder="Tell us how we can help you..."
+                                        disabled={isSubmitting}
                                     ></textarea>
                                 </div>
 
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                    className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
                                 >
                                     {isSubmitting ? 'Sending...' : 'Send Message'}
                                 </button>
@@ -284,54 +289,25 @@ export default function Contact() {
                     <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Contact the Right Department</h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                         {departments.map((dept, index) => (
-                            <div key={index} className="bg-green-50 rounded-xl p-6">
+                            <div key={index} className="bg-green-50 rounded-xl p-6 hover:shadow-lg transition-shadow duration-300">
                                 <h3 className="text-xl font-bold text-green-800 mb-3">{dept.name}</h3>
                                 <p className="text-gray-700 mb-4">{dept.description}</p>
                                 <div className="space-y-2">
                                     <a 
                                         href={`mailto:${dept.email}`}
-                                        className="flex items-center text-green-600 hover:text-green-800 transition-colors"
+                                        className="flex items-center text-green-600 hover:text-green-800 transition-colors duration-300"
                                     >
                                         <span className="mr-2">✉️</span> {dept.email}
                                     </a>
                                     <a 
                                         href={`tel:${dept.phone.replace(/\s/g, '')}`}
-                                        className="flex items-center text-green-600 hover:text-green-800 transition-colors"
+                                        className="flex items-center text-green-600 hover:text-green-800 transition-colors duration-300"
                                     >
                                         <span className="mr-2">📞</span> {dept.phone}
                                     </a>
                                 </div>
                             </div>
                         ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* FAQ Section */}
-            <section className="py-16 bg-green-50">
-                <div className="container mx-auto px-4">
-                    <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Frequently Asked Questions</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                        <div>
-                            <h3 className="text-lg font-semibold text-green-800 mb-2">Do you offer farm tours on weekends?</h3>
-                            <p className="text-gray-700 mb-4">Yes, we offer farm tours on Saturdays from 9:00 AM to 4:00 PM. Sunday tours are available by special arrangement.</p>
-                            
-                            <h3 className="text-lg font-semibold text-green-800 mb-2">What's your delivery area?</h3>
-                            <p className="text-gray-700 mb-4">We deliver within Nairobi and surrounding areas. Free delivery for orders above KSh 3,000.</p>
-                            
-                            <h3 className="text-lg font-semibold text-green-800 mb-2">Can I visit without a booking?</h3>
-                            <p className="text-gray-700">Walk-ins are welcome, but we recommend booking in advance to ensure availability and better service.</p>
-                        </div>
-                        <div>
-                            <h3 className="text-lg font-semibold text-green-800 mb-2">Do you offer wholesale prices?</h3>
-                            <p className="text-gray-700 mb-4">Yes, we offer competitive wholesale prices for bulk orders. Contact our export department for pricing.</p>
-                            
-                            <h3 className="text-lg font-semibold text-green-800 mb-2">Are your products organic certified?</h3>
-                            <p className="text-gray-700 mb-4">Yes, all our products are certified organic by Kenya Organic Agriculture Network.</p>
-                            
-                            <h3 className="text-lg font-semibold text-green-800 mb-2">What payment methods do you accept?</h3>
-                            <p className="text-gray-700">We accept M-Pesa, bank transfers, cash, and credit/debit cards.</p>
-                        </div>
                     </div>
                 </div>
             </section>
@@ -343,7 +319,7 @@ export default function Contact() {
                     <p className="text-xl mb-6">For urgent matters outside business hours, call our emergency line</p>
                     <a 
                         href="tel:+254743200200"
-                        className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors text-lg"
+                        className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors duration-300 text-lg"
                     >
                         Emergency Line: +254 743 200 200
                     </a>
