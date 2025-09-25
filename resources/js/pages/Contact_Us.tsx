@@ -44,19 +44,19 @@ export default function Contact() {
         },
         {
             name: 'Product Orders',
-            email: 'orders@sigrut.com',
+            email: 'info@sigrut.com',
             phone: '+254 743 200 200',
             description: 'For ordering honey, avocados, poultry, and other products'
         },
         {
             name: 'Farm Tours & Accommodation',
-            email: 'tours@sigrut.com',
+            email: 'info@sigrut.com',
             phone: '+254 743 200 200',
             description: 'Booking farm tours, accommodation, and conference facilities'
         },
         {
             name: 'Export & Wholesale',
-            email: 'export@sigrut.com',
+            email: 'info@sigrut.com',
             phone: '+254 743 200 200',
             description: 'For bulk orders and export inquiries'
         }

@@ -63,16 +63,16 @@ export default function About() {
                 <div className="container mx-auto px-6">
                     <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
                         <div className="p-4">
-                            <div className="text-3xl font-bold text-green-800 mb-2">13+</div>
+                            <div className="text-3xl font-bold text-green-800 mb-2">15+</div>
                             <div className="text-gray-600">Years Experience</div>
                         </div>
                         <div className="p-4">
-                            <div className="text-3xl font-bold text-green-800 mb-2">500+</div>
-                            <div className="text-gray-600">Beehives</div>
+                            <div className="text-3xl font-bold text-green-800 mb-2">15,000+</div>
+                            <div className="text-gray-600">Avocado trees</div>
                         </div>
                         <div className="p-4">
-                            <div className="text-3xl font-bold text-green-800 mb-2">100%</div>
-                            <div className="text-gray-600">Organic Certified</div>
+                            <div className="text-3xl font-bold text-green-800 mb-2">100+</div>
+                            <div className="text-gray-600">Beehives</div>
                         </div>
                         <div className="p-4">
                             <div className="text-3xl font-bold text-green-800 mb-2">50+</div>
@@ -145,7 +145,7 @@ export default function About() {
                                 through training and market access programs.
                             </p>
                             <p className="text-lg text-gray-700 mb-6">
-                                We've planted over 5,000 trees on our property and maintain 50 acres of conserved natural habitat to promote biodiversity.
+                                We've planted over 15,000 trees on our property and maintain 50 acres of conserved natural habitat to promote biodiversity.
                             </p>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="bg-white p-4 rounded-lg text-center">
@@ -294,15 +294,15 @@ export default function About() {
                     {/* Growth Metrics */}
                     <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
                         <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
-                            <div className="text-3xl font-bold text-green-700 mb-2">10 → 500+</div>
-                            <div className="text-gray-600 text-sm">Beehives Growth</div>
+                            <div className="text-3xl font-bold text-green-700 mb-2">100 → 15,000+</div>
+                            <div className="text-gray-600 text-sm">Avocado trees</div>
                         </div>
                         <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
                             <div className="text-3xl font-bold text-green-700 mb-2">Local → Global</div>
                             <div className="text-gray-600 text-sm">Market Reach</div>
                         </div>
                         <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">
-                            <div className="text-3xl font-bold text-green-700 mb-2">13+ Years</div>
+                            <div className="text-3xl font-bold text-green-700 mb-2">15+ Years</div>
                             <div className="text-gray-600 text-sm">Of Excellence</div>
                         </div>
                         <div className="text-center p-6 bg-white rounded-lg shadow-sm border border-green-100 hover:shadow-md transition-shadow">

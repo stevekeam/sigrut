@@ -300,14 +300,14 @@ const HoneyFarmPage = () => {
                                         <span className="text-2xl mr-4">✉️</span>
                                         <div>
                                             <p className="font-semibold">Email</p>
-                                            <p className="text-gray-600">honey@sigrutfarms.com</p>
+                                            <p className="text-gray-600">info@sigrut.com</p>
                                         </div>
                                     </div>
                                     <div className="flex items-center">
                                         <span className="text-2xl mr-4">📍</span>
                                         <div>
                                             <p className="font-semibold">Address</p>
-                                            <p className="text-gray-600">Sigrut Farms Apiary, Nairobi</p>
+                                            <p className="text-gray-600">Sigrut Orchard & Hive Ltd Apiary, Siaya</p>
                                         </div>
                                     </div>
                                 </div>

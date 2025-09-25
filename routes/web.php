@@ -21,7 +21,7 @@ Route::get('/Accommodation', function () {
 
 Route::get('/HoneyProducts', function () {
     return Inertia::render('HoneyProducts');
-})->name('HoneyProducts');
+})->name('Apiary');
 
 Route::get('/Conference', function () {
     return Inertia::render('Conference');
@@ -39,6 +39,10 @@ Route::get('/Poultry', function () {
 Route::get('/Moringa', function () {
     return Inertia::render('Moringa');
 })->name('Moringa');
+
+Route::get('/Vegetables', function () {
+    return Inertia::render('Vegetables');
+})->name('Vegetables');
 
 Route::get('/privacyPolicy', function () {
     return Inertia::render('privacyPolicy');

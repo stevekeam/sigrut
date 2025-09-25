@@ -29,8 +29,10 @@ export default function Header() {
             type: 'dropdown',
             children: [
                 { name: 'Hass Avocado', href: '/Avocado' },
-                { name: 'Honey', href: '/HoneyProducts' },
-                { name: 'Poultry', href: '/Poultry' }
+                { name: 'Apiary', href: '/HoneyProducts' },
+                { name: 'Poultry', href: '/Poultry' },
+                { name: 'Moringa', href: '/Moringa' },
+                { name: 'Vegetables', href: '/Vegetables' }
             ]
         },
         { 

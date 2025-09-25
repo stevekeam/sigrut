@@ -76,9 +76,10 @@ export default function Footer() {
                                 <div className="space-y-3">
                                     {[
                                         { name: 'Hass Avocado', href: '/Avocado' },
-                                        { name: 'Honey Products', href: '/HoneyProducts' },
+                                        { name: 'Apiary', href: '/HoneyProducts' },
                                         { name: 'Fresh Poultry', href: '/Poultry' },
-                                        { name: 'Organic Vegetables', href: '/products' }
+                                        { name: 'Organic Vegetables', href: '/products' },
+                                        { name: 'moringa', href: '/moringa' }
                                     ].map((link) => (
                                         <Link 
                                             key={link.name}
@@ -100,9 +101,7 @@ export default function Footer() {
                                 <div className="space-y-3">
                                     {[
                                         { name: 'Farm Accommodation', href: '/Accommodation' },
-                                        { name: 'Conference Facilities', href: '/Agritourism' },
-                                        { name: 'Agritourism', href: '/Agritourism' },
-                                        { name: 'Beekeeping Training', href: '/HoneyProducts' }
+                                        { name: 'Agritourism', href: '/Agritourism' }
                                     ].map((link) => (
                                         <Link 
                                             key={link.name}
