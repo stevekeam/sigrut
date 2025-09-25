@@ -4,28 +4,24 @@ export default function Home() {
     // Avocado Process Steps
     const processSteps = [
         {
-            step: 1,
             title: 'Orchard Management',
             icon: '🌳',
             description: 'Sustainable farming practices in our avocado orchards',
             details: ['Organic fertilization', 'Precision irrigation', 'Soil health monitoring', 'Integrated pest management']
         },
         {
-            step: 2,
             title: 'Quality Harvesting',
             icon: '👨‍🌾',
             description: 'Hand-picked at perfect maturity for optimal quality',
             details: ['Selective harvesting', 'Proper handling techniques', 'Quality grading', 'Dry matter testing']
         },
         {
-            step: 3,
             title: 'Cold Chain Processing',
             icon: '❄️',
             description: 'State-of-the-art cold storage facilities',
             details: ['Temperature control', 'Quick cooling', 'Quality preservation', 'Export readiness']
         },
         {
-            step: 4,
             title: 'Export Preparation',
             icon: '📦',
             description: 'Meeting international standards and certifications',
@@ -208,7 +204,7 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* Process Section */}
+            {/* Process Section - Updated: Removed yellow step icons */}
             <section id="process" className="py-16 bg-green-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-12">
@@ -220,19 +216,17 @@ export default function Home() {
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {processSteps.map((step) => (
-                            <div key={step.step} className="bg-white rounded-xl p-6 shadow-lg text-center">
+                        {processSteps.map((step, index) => (
+                            <div key={index} className="bg-white rounded-xl p-6 shadow-lg text-center">
                                 <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                                     <span className="text-2xl">{step.icon}</span>
                                 </div>
-                                <div className="bg-amber-500 text-white rounded-full w-8 h-8 flex items-center justify-center mx-auto mb-4 text-sm font-bold">
-                                    {step.step}
-                                </div>
+                                {/* Removed the yellow step icon div below */}
                                 <h3 className="text-xl font-bold text-green-800 mb-3">{step.title}</h3>
                                 <p className="text-gray-700 mb-4">{step.description}</p>
                                 <ul className="space-y-2 text-left">
-                                    {step.details.map((detail, index) => (
-                                        <li key={index} className="flex items-center text-sm text-gray-600">
+                                    {step.details.map((detail, detailIndex) => (
+                                        <li key={detailIndex} className="flex items-center text-sm text-gray-600">
                                             <span className="mr-2">•</span> {detail}
                                         </li>
                                     ))}

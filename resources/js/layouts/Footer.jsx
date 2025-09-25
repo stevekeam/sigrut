@@ -77,9 +77,9 @@ export default function Footer() {
                                     {[
                                         { name: 'Hass Avocado', href: '/Avocado' },
                                         { name: 'Apiary', href: '/HoneyProducts' },
-                                        { name: 'Fresh Poultry', href: '/Poultry' },
+                                        { name: 'Poultry', href: '/Poultry' },
                                         { name: 'Organic Vegetables', href: '/products' },
-                                        { name: 'moringa', href: '/moringa' }
+                                        { name: 'Moringa', href: '/Moringa' }
                                     ].map((link) => (
                                         <Link 
                                             key={link.name}
