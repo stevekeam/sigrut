@@ -131,7 +131,7 @@ export default function Home() {
                                 About Our Farm
                             </a>
                             <a 
-                                href="/Products" 
+                                href="/Avocado" 
                                 className="bg-green-600 bg-opacity-80 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center text-sm"
                             >
                                 Our Products
