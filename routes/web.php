@@ -7,6 +7,56 @@ Route::get('/', function () {
     return Inertia::render('welcome');
 })->name('home');
 
+Route::get('/About', function () {
+    return Inertia::render('About');
+})->name('About');
+
+Route::get('/Avocado', function () {
+    return Inertia::render('Avocado');
+})->name('Avocado');
+
+Route::get('/Accommodation', function () {
+    return Inertia::render('Accommodation');
+})->name('Accommodation');
+
+Route::get('/HoneyProducts', function () {
+    return Inertia::render('HoneyProducts');
+})->name('Apiary');
+
+Route::get('/Conference', function () {
+    return Inertia::render('Conference');
+})->name('Conference');
+
+Route::get('/Agritourism', function () {
+    return Inertia::render('Agritourism');
+})->name('Agritourism');
+
+
+Route::get('/Poultry', function () {
+    return Inertia::render('Poultry');
+})->name('Poultry');
+
+Route::get('/Moringa', function () {
+    return Inertia::render('Moringa');
+})->name('Moringa');
+
+Route::get('/Vegetables', function () {
+    return Inertia::render('Vegetables');
+})->name('Vegetables');
+
+Route::get('/privacyPolicy', function () {
+    return Inertia::render('privacyPolicy');
+})->name('privacyPolicy');
+
+Route::get('/TearmsAndConditions', function () {
+    return Inertia::render('TearmsAndConditions');
+})->name('TearmsAndConditions');
+
+Route::get('/Contact_Us', function () {
+    return Inertia::render('Contact_Us');
+})->name('Contact_Us');
+
+
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {
         return Inertia::render('dashboard');
