@@ -277,14 +277,14 @@ export default function Home() {
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <img 
-                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0086.jpg" 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0122.jpg" 
                                 alt="Harvesting Process" 
                                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                             />
                         </div>
                         <div className="rounded-lg overflow-hidden shadow-lg">
                             <img 
-                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2023/11/IMG-20231031-WA0167.jpg" 
+                                src="https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-15.48.47_38fd6aaa.jpg" 
                                 alt="Quality Control" 
                                 className="w-full h-64 object-cover hover:scale-105 transition-transform duration-300"
                             />

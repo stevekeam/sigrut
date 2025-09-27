@@ -15,7 +15,7 @@ export default function TermsAndConditions({ auth }: { auth: any }) {
             title: "General Terms and Conditions",
             content: (
                 <p className="text-gray-600 leading-relaxed">
-                    This website is owned and operated by {import.meta.env.VITE_APP_NAME || 'Our Company'}. 
+                    This website is owned and operated by Sigrut Orchard & Hive Ltd. 
                     By using this website, you are deemed to have accepted these conditions.
                 </p>
             )
@@ -26,7 +26,7 @@ export default function TermsAndConditions({ auth }: { auth: any }) {
             content: (
                 <>
                     <p className="text-gray-600 mb-4">
-                        All rights, including copyright, in this website are owned by or licensed to us. 
+                        All rights, including copyright, in this website are owned by or licensed to Sigrut. 
                         Any use of this website or its contents, including copying or storing it or them 
                         in whole or part, other than for your own lawful, personal, non-commercial use is 
                         prohibited without our written consent.
