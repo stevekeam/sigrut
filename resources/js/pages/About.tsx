@@ -222,9 +222,9 @@ export default function About() {
                                     image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0049.jpg"
                                 },
                                 {
-                                    year: "2025",
-                                    event: "Global Recognition",
-                                    description: "Expanded international exports, sharing Kenyan agricultural excellence with the world while empowering our community.",
+                                    year: "2024",
+                                    event: "Avocado Industry Excellence Awards & Networking Gala Dinner",
+                                    description: "1st Runners-up in the Grower Medium Scale (10–100 Acres) category. The award ceremony was held at Argyle Hotel on 5th December 2024.",
                                     icon: "🌍",
                                     image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/WhatsApp-Image-2025-01-20-at-14.32.35_ad7a11fe.jpg"
                                 }
