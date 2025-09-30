@@ -1,8 +1,21 @@
 import AppLayout from '../layouts/app-layout';
 import { useState } from 'react';
 
+interface ContactFormData {
+    name: string;
+    email: string;
+    phone: string;
+    subject: string;
+    message: string;
+}
+
+interface SubmitStatus {
+    type: 'idle' | 'success' | 'error';
+    message?: string;
+}
+
 export default function Contact() {
-    const [formData, setFormData] = useState({
+    const [formData, setFormData] = useState<ContactFormData>({
         name: '',
         email: '',
         phone: '',
@@ -10,7 +23,7 @@ export default function Contact() {
         message: ''
     });
     const [isSubmitting, setIsSubmitting] = useState(false);
-    const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+    const [submitStatus, setSubmitStatus] = useState<SubmitStatus>({ type: 'idle' });
 
     // Contact information
     const contactInfo = [
@@ -70,15 +83,85 @@ export default function Contact() {
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setIsSubmitting(true);
-        setSubmitStatus('idle');
+        setSubmitStatus({ type: 'idle' });
         
-        // Simulate form submission
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000));
-            setSubmitStatus('success');
-            setFormData({ name: '', email: '', phone: '', subject: '', message: '' });
-        } catch (error) {
-            setSubmitStatus('error');
+            // Try API route first, fallback to web route
+            let apiUrl = 'http://localhost:8000/api/contact';
+            
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+                body: JSON.stringify(formData)
+            });
+
+            const data = await response.json();
+
+            if (response.ok) {
+                setSubmitStatus({
+                    type: 'success',
+                    message: data.message || 'Thank you! Your message has been sent successfully. We\'ll get back to you within 24 hours.'
+                });
+                // Reset form
+                setFormData({ 
+                    name: '', 
+                    email: '', 
+                    phone: '', 
+                    subject: '', 
+                    message: '' 
+                });
+            } else {
+                throw new Error(data.message || 'Failed to send message');
+            }
+        } catch (error: any) {
+            console.error('Contact form error:', error);
+            
+            // If API route fails, try the web route as fallback
+            if (error.message?.includes('Failed to fetch') || error.message?.includes('Network error')) {
+                try {
+                    const webResponse = await fetch('http://localhost:8000/contact', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'Accept': 'application/json',
+                            'X-Requested-With': 'XMLHttpRequest',
+                        },
+                        body: JSON.stringify(formData)
+                    });
+
+                    const webData = await webResponse.json();
+
+                    if (webResponse.ok) {
+                        setSubmitStatus({
+                            type: 'success',
+                            message: webData.message || 'Thank you! Your message has been sent successfully.'
+                        });
+                        setFormData({ 
+                            name: '', 
+                            email: '', 
+                            phone: '', 
+                            subject: '', 
+                            message: '' 
+                        });
+                    } else {
+                        throw new Error(webData.message || 'Failed to send message via web route');
+                    }
+                } catch (webError: any) {
+                    setSubmitStatus({
+                        type: 'error',
+                        message: webError.message || 'Network error. Please check your connection and try again, or contact us directly at info@sigrut.com'
+                    });
+                }
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: error.message || 'Sorry, there was an error sending your message. Please try again or contact us directly at info@sigrut.com'
+                });
+            }
         } finally {
             setIsSubmitting(false);
         }
@@ -87,7 +170,7 @@ export default function Contact() {
     return (
         <AppLayout title="Contact Us - Sigrut Farms">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-20">
+            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-54 overflow-hidden">
                 <div 
                     className="absolute inset-0 bg-cover bg-center opacity-80"
                     style={{backgroundImage: 'url(https://sigrutfarmsinternational.com/wp-content/uploads/2025/02/IMG-20250109-WA0075.jpg)'}}
@@ -166,14 +249,14 @@ export default function Contact() {
                         <div>
                             <h2 className="text-3xl font-bold text-green-800 mb-6">Send Us a Message</h2>
                             <form onSubmit={handleSubmit} className="bg-white rounded-xl shadow-lg p-8">
-                                {submitStatus === 'success' && (
+                                {submitStatus.type === 'success' && (
                                     <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
-                                        Thank you! Your message has been sent successfully. We&apos;ll get back to you within 24 hours.
+                                        {submitStatus.message}
                                     </div>
                                 )}
-                                {submitStatus === 'error' && (
+                                {submitStatus.type === 'error' && (
                                     <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
-                                        Sorry, there was an error sending your message. Please try again or contact us directly.
+                                        {submitStatus.message}
                                     </div>
                                 )}
 
@@ -273,9 +356,19 @@ export default function Contact() {
                                 <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed"
+                                    className="w-full bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors duration-300 disabled:bg-gray-400 disabled:cursor-not-allowed flex items-center justify-center"
                                 >
-                                    {isSubmitting ? 'Sending...' : 'Send Message'}
+                                    {isSubmitting ? (
+                                        <>
+                                            <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                                                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                            </svg>
+                                            Sending...
+                                        </>
+                                    ) : (
+                                        'Send Message'
+                                    )}
                                 </button>
                             </form>
                         </div>
@@ -321,7 +414,7 @@ export default function Contact() {
                         href="tel:+254743200200"
                         className="inline-block bg-green-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-800 transition-colors duration-300 text-lg"
                     >
-                        Emergency Line: +254 743 200 200
+                        Emergency Line: +254 743 2001 200
                     </a>
                 </div>
             </section>

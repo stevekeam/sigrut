@@ -56,8 +56,8 @@ export default function Home() {
     // Orchard Features
     const orchardFeatures = [
         {
-            metric: '500+',
-            label: 'Hectares of Orchards',
+            metric: '50+',
+            label: 'Acers of Orchards',
             description: 'Expansive avocado plantations across optimal growing regions'
         },
         {

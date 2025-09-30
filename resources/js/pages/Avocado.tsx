@@ -77,7 +77,7 @@ export default function HassAvocado() {
     return (
         <AppLayout title="Premium Hass Avocado - Sigrut Farms Export Quality">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
+            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-54 overflow-hidden">
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
@@ -100,22 +100,6 @@ export default function HassAvocado() {
                             <p className="text-lg md:text-xl lg:text-2xl mb-8 opacity-90 leading-relaxed">
                                 Export-quality Hass avocados from Kenya's leading sustainable farm
                             </p>
-                            
-                            {/* Buttons moved outside the paragraph */}
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center mt-8">
-                                <a 
-                                    href="#products" 
-                                    className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors inline-block"
-                                >
-                                    View Products
-                                </a>
-                                <a 
-                                    href="#training" 
-                                    className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors inline-block"
-                                >
-                                    Farmer Training
-                                </a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -169,7 +153,7 @@ export default function HassAvocado() {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                         {avocadoVarieties.map(variety => (
-                            <div key={variety.id} className="bg-green-50 rounded-xl overflow-hidden shadow-lg transition-transform hover:scale-105">
+                            <div key={variety.id} className="bg-green-50 rounded-xl overflow-hidden shadow-lg">
                                 <img 
                                     src={variety.image} 
                                     alt={variety.name}
@@ -188,13 +172,6 @@ export default function HassAvocado() {
                                                 </li>
                                             ))}
                                         </ul>
-                                    </div>
-                                    
-                                    <div className="flex justify-between items-center">
-                                        <span className="text-amber-600 font-bold text-lg">{variety.name}</span>
-                                        <button className="bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
-                                            Inquire Now
-                                        </button>
                                     </div>
                                 </div>
                             </div>
@@ -273,16 +250,13 @@ export default function HassAvocado() {
                                         {program.duration}
                                     </span>
                                 </div>
-                                <ul className="space-y-2 mb-4">
+                                <ul className="space-y-2">
                                     {program.topics.map((topic, topicIndex) => (
                                         <li key={topicIndex} className="flex items-center text-sm text-gray-600">
                                             <span className="mr-2">•</span> {topic}
                                         </li>
                                     ))}
                                 </ul>
-                                <button className="w-full bg-green-600 text-white py-2 rounded-lg hover:bg-green-700 transition-colors">
-                                    Register Now
-                                </button>
                             </div>
                         ))}
                     </div>
@@ -386,19 +360,8 @@ export default function HassAvocado() {
                     <p className="text-xl mb-8 max-w-2xl mx-auto">
                         Partner with us for quality Hass avocados, professional packing services, or comprehensive farmer training.
                     </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <a
-                            href="/contact"
-                            className="bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
-                        >
-                            Contact for Export
-                        </a>
-                        <a
-                            href="tel:+254743200200"
-                            className="border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors"
-                        >
-                            Call: +254 743 200 200
-                        </a>
+                    <div className="text-lg">
+                        <p>Contact us at: <strong>+254 743 200 200</strong></p>
                     </div>
                 </div>
             </section>

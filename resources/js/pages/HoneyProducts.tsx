@@ -90,11 +90,11 @@ const HoneyFarmPage = () => {
         },
         {
             name: 'Full Beekeeping Experience',
-            includes: ['Full protective gear', 'Live hive handling', 'Honey extraction', 'Take-home honey']
+            includes: ['Full protective gear', 'Live hive handling', 'Honey extraction',]
         },
         {
             name: 'Beekeeping Workshop',
-            includes: ['Theoretical training', 'Practical sessions', 'Certificate', 'Lunch included']
+            includes: ['Theoretical training', 'Practical sessions', 'Certificate',]
         }
     ];
 
@@ -129,7 +129,7 @@ const HoneyFarmPage = () => {
     return (
         <AppLayout title="Pure Natural Honey - Sigrut Farms Beekeeping Experience">
          {/* Hero Section */}
-<section id="hero" className="relative bg-gradient-to-r from-amber-600 to-amber-800 text-white py-24">
+<section id="hero" className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-54 overflow-hidden">
     <div className="absolute inset-0 bg-cover bg-center opacity-80"
          style={{backgroundImage: 'url(https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0047.jpg)'}}>
     </div>
@@ -258,9 +258,6 @@ const HoneyFarmPage = () => {
                                         </li>
                                     ))}
                                 </ul>
-                                <button className="w-full bg-amber-500 text-white py-3 rounded-lg font-semibold hover:bg-amber-400 transition-colors">
-                                    Book This Tour
-                                </button>
                             </div>
                         ))}
                     </div>
@@ -272,65 +269,6 @@ const HoneyFarmPage = () => {
                         >
                             Book Your Farm Visit Today
                         </button>
-                    </div>
-                </div>
-            </section>
-
-            {/* Contact Section */}
-            <section id="contact" className="py-20 bg-white">
-                <div className="container mx-auto px-4">
-                    <div className="max-w-4xl mx-auto">
-                        <div className="text-center mb-12">
-                            <h2 className="text-3xl md:text-4xl font-bold text-amber-800 mb-4">Get In Touch</h2>
-                            <p className="text-lg text-gray-600">Ready to experience our honey or visit our farm? Contact us today!</p>
-                        </div>
-
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-                            <div>
-                                <h3 className="text-2xl font-bold text-amber-800 mb-6">Contact Information</h3>
-                                <div className="space-y-4">
-                                    <div className="flex items-center">
-                                        <span className="text-2xl mr-4">📞</span>
-                                        <div>
-                                            <p className="font-semibold">Phone</p>
-                                            <p className="text-gray-600">+254 743 200 200</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <span className="text-2xl mr-4">✉️</span>
-                                        <div>
-                                            <p className="font-semibold">Email</p>
-                                            <p className="text-gray-600">info@sigrut.com</p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center">
-                                        <span className="text-2xl mr-4">📍</span>
-                                        <div>
-                                            <p className="font-semibold">Address</p>
-                                            <p className="text-gray-600">Sigrut Orchard & Hive Ltd Apiary, Siaya</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div>
-                                <h3 className="text-2xl font-bold text-amber-800 mb-6">Quick Inquiry</h3>
-                                <form className="space-y-4">
-                                    <input type="text" placeholder="Your Name" className="w-full p-3 border border-gray-300 rounded-lg"/>
-                                    <input type="email" placeholder="Your Email" className="w-full p-3 border border-gray-300 rounded-lg"/>
-                                    <select className="w-full p-3 border border-gray-300 rounded-lg">
-                                        <option>I'm interested in honey products</option>
-                                        <option>I want to visit the apiary</option>
-                                        <option>I need bulk orders</option>
-                                        <option>Other inquiry</option>
-                                    </select>
-                                    <textarea placeholder="Your Message" rows={4} className="w-full p-3 border border-gray-300 rounded-lg"></textarea>
-                                    <button type="submit" className="w-full bg-amber-500 text-white py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors">
-                                        Send Message
-                                    </button>
-                                </form>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </section>

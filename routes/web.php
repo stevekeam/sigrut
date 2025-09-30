@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Mail\ContactFormMail;
+use App\Http\Controllers\ContactController;
 
 Route::get('/', function () {
     return Inertia::render('welcome');
@@ -56,6 +58,7 @@ Route::get('/Contact_Us', function () {
     return Inertia::render('Contact_Us');
 })->name('Contact_Us');
 
+Route::post('/contact', [ContactController::class, 'send'])->name('contact.send');
 
 Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('dashboard', function () {

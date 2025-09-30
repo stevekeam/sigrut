@@ -8,29 +8,10 @@ export default function About() {
         setActiveAccordion(activeAccordion === index ? null : index);
     };
 
-    const faqItems = [
-        {
-            question: "Are your products certified organic?",
-            answer: "Yes, all our products are certified organic by the Kenya Organic Agriculture Network. We follow strict organic farming practices without synthetic pesticides or fertilizers."
-        },
-        {
-            question: "Do you offer farm tours year-round?",
-            answer: "We offer farm tours throughout the year, but we recommend booking in advance during peak seasons (June-August and December-January) to ensure availability."
-        },
-        {
-            question: "Can I purchase your products online?",
-            answer: "Currently, we sell our products through local markets and export channels. We're developing an online store for direct consumer purchases - coming soon!"
-        },
-        {
-            question: "Do you offer accommodation on the farm?",
-            answer: "Yes, we have comfortable farmstay accommodation available for visitors who want to experience rural Kenyan life and learn about sustainable agriculture firsthand."
-        }
-    ];
-
     return (
         <AppLayout title="About Sigrut Farms - Sustainable Agriculture & Pure Natural Products">
             {/* Hero Section */}
-            <section className="relative bg-gradient-to-r from-green-800 to-green-900 text-white min-h-screen flex items-center">
+            <section className="relative bg-gradient-to-r from-green-700 to-green-900 text-white py-54 overflow-hidden">
                 <div 
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
@@ -122,11 +103,11 @@ export default function About() {
                             <h2 className="text-3xl font-bold text-green-800 mb-6">Our Story</h2>
                             <p className="text-lg text-gray-700 mb-4">
                                 Founded in 2010, Sigrut Orchard & Hive Ltd began as a small family operation with a vision for sustainable agriculture. 
-                                What started with a few beehives and avocado trees has grown into a thriving agricultural enterprise.
+                                What started with a few avocado trees that has grown into a thriving agricultural enterprise.
                             </p>
                             <p className="text-lg text-gray-700">
                                 Today, we manage over 500 beehives, extensive avocado orchards, poultry operations, and offer 
-                                farm accommodation and tours while remaining committed to sustainable practices that prioritize 
+                                farm accommodation and agritourism while remaining committed to sustainable practices that prioritize 
                                 environmental health and community development.
                             </p>
                         </div>
@@ -189,14 +170,14 @@ export default function About() {
                                 {
                                     year: "2019",
                                     event: "The Humble Beginning",
-                                    description: "Founded with just 10 beehives, our journey began with a vision for sustainable agriculture and pure natural products.",
+                                    description: "Founded with just few avocado trees, our journey began with a vision for sustainable agriculture and pure natural products.",
                                     icon: "🥑",
                                     image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2023/10/IMG-20231009-WA0248.jpg"
                                 },
                                 {
                                     year: "2020",
                                     event: "Expanding Our Roots",
-                                    description: "Ventured into Hass avocado farming, creating synergy between our pollinators and crops for integrated agriculture.",
+                                    description: "Ventured into Beekeeping, creating synergy between our pollinators and crops for integrated agriculture.",
                                     icon: "🐝",
                                     image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0050-e1737969730374.jpg"
                                 },
@@ -217,7 +198,7 @@ export default function About() {
                                 {
                                     year: "2024",
                                     event: "Sustainable Scale",
-                                    description: "Grew to 500+ beehives while maintaining biodiversity, proving that scale and sustainability can coexist.",
+                                    description: "Grew to 1500+ avocado trees while maintaining biodiversity, proving that scale and sustainability can coexist.",
                                     icon: "📈",
                                     image: "https://Sigrutfarmsinternational.com/wp-content/uploads/2025/01/IMG-20250107-WA0049.jpg"
                                 },
@@ -374,31 +355,6 @@ export default function About() {
                 </div>
             </section>
 
-            {/* FAQ Section */}
-            <section className="py-16 bg-white">
-                <div className="container mx-auto px-6">
-                    <h2 className="text-3xl font-bold text-green-800 text-center mb-12">Frequently Asked Questions</h2>
-                    
-                    <div className="max-w-3xl mx-auto">
-                        {faqItems.map((item, index) => (
-                            <div key={index} className="mb-6 bg-white rounded-lg shadow-sm border border-green-100">
-                                <div className="p-6">
-                                    <h3 className="font-semibold text-lg text-green-800 mb-3 flex items-center">
-                                        <span className="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm">Q</span>
-                                        {item.question}
-                                    </h3>
-                                    <div className="pl-9">
-                                        <p className="text-gray-700 flex items-start">
-                                            <span className="bg-amber-100 text-amber-600 rounded-full w-6 h-6 flex items-center justify-center mr-3 text-sm flex-shrink-0">A</span>
-                                            {item.answer}
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        ))}
-                    </div>
-                </div>
-            </section>
 
             {/* Certification Section */}
             <section id="certifications" className="py-16 bg-green-50">
@@ -448,16 +404,10 @@ export default function About() {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <a 
-                            href="/products" 
+                            href="/Avocado" 
                             className="inline-block bg-amber-500 text-white px-8 py-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors"
                         >
                             Explore Our Products
-                        </a>
-                        <a 
-                            href="/Farm_Tours" 
-                            className="inline-block border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-green-800 transition-colors"
-                        >
-                            Book a Farm Tour
                         </a>
                         <a 
                             href="/Contact_Us" 
